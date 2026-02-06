@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JB De Vila</title>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="favicon-img" href="favicon-jb.png">
 
@@ -39,12 +38,11 @@
       </p>
     </div>
 
-    <div class="hero-right">
-      <h1 class="name">
-        <div class="name1">JB</div>
-        <div class="name2">DE VILA</div>
-      </h1>
-    </div>
+        <div class="name-center">
+  <div class="name1">JB</div>
+  <div class="name2">DE VILA</div>
+</div>
+
 
   </div>
 </section>
@@ -88,15 +86,15 @@
   <div class="contact-container">
     <h2>Contact Me</h2>
 
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" rows="6" required></textarea>
+    <form class="contact-form" id="contact-form">
+      <input type="name" placeholder="Your Name" name="name1" required>
+      <input type="email" placeholder="Your Email" name="email1" required>
+      <textarea placeholder="Your Message" rows="6" name="message1" required></textarea>
       <button type="submit">SEND MESSAGE</button>
     </form>
   </div>
 </section>
 
-
+<script src="script.js"></script> 
 </body>
 </html>
