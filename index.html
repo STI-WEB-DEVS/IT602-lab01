@@ -1,65 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
-    <title>Jossua Bongo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Bongo Portfolio</title>
+    <style>
+    
+        body {
+            background: url('src/black.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+    </style>
 </head>
+<body class="font-sans text-white">
 
+    <header class="fixed top-0 left-0 w-full flex justify-between items-center px-8 md:px-16 py-5 bg-black/30 backdrop-blur-md z-[1000]">
+        <h1 class="text-xl font-bold tracking-widest">JDEV</h1>
+        <nav class="hidden md:flex gap-8 text-sm tracking-widest">
+            <a href="#home" class="relative group">HOME
+                <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-white transition-all group-hover:w-full"></span>
+            </a>
+            <a href="#about" class="relative group">ABOUT
+                <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-white transition-all group-hover:w-full"></span>
+            </a>
+            <a href="#projects" class="relative group">PROJECTS
+                <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-white transition-all group-hover:w-full"></span>
+            </a>
+            <a href="#contact" class="relative group">CONTACTS
+                <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-white transition-all group-hover:w-full"></span>
+            </a>
+        </nav>
+    </header>
 
-<body>
-  <header class="nav">
-  <h1 class="logo">JDEV </h1>
-
-  <nav class="navbar">
-    <a href="#home">HOME</a>
-    <a href="#about">ABOUT</a>
-    <a href="#projects">PROJECTS</a>
-    <a href="#contact">CONTACTS</a>
-  </nav>
-</header>
-
-
-    <section class="hero"  id="home">
-        <div class="left-side"> 
-        <h1> UX/UI <br> DESIGN & <br>
-            FULL-<br>
-            STACK<br>
-            WEB <br>
-            DEVELOPER</h1>
+    <section id="home" class="min-h-screen flex flex-col md:flex-row justify-between items-center px-8 md:px-16 pt-32 pb-16">
+        <div class="w-full md:w-1/2">
+            <h1 class="text-5xl md:text-7xl font-sans font-bold leading-tight">
+                UX/UI <br> DESIGN & <br> FULL-STACK <br> WEB DEVELOPER
+            </h1>
         </div>
 
-        <div class="right-side">
-            <div class="profile">
-                <div class="introduction">
-                    <h2> Hi, I'm Jossua</h2>
-                    <p class="roles">
-                        UX & UI design & Full-Stack Web Developer.
-                    </p>
-                    <p class="description">
-                        "A dedicated full-stack developer committed to engineering high-performance web solutions from the ground up. By bridging the gap between intuitive front-end aesthetics and robust back-end architecture, I ensure every application is as scalable as it is visually engaging. I specialize in leveraging modern frameworks to streamline data flow and optimize system logic. Driven by a passion for clean code and architectural integrity, I focus on building reliable systems that solve complex problems and provide a seamless experience for every user."
-                    </p>
-                </div>  
+        <div class="w-full md:w-1/2 max-w-xl mt-12 md:mt-0">
+            <div class="space-y-4">
+                <h2 class="text-2xl font-semibold">Hi, I'm Jossua Bongo</h2>
+                <p class="text-base font-medium opacity-90">UX & UI design & Full-Stack Web Developer.</p>
+                <p class="text-sm leading-relaxed opacity-80">
+                    "A dedicated full-stack developer committed to engineering high-performance web solutions from the ground up. By bridging the gap between intuitive front-end aesthetics and robust back-end architecture, I ensure every application is as scalable as it is visually engaging."
+                </p>
             </div>
         </div>
+    </section>
 
-    </section>    
+    <section id="contact" class="min-h-screen flex justify-center items-center px-8 pt-32">
+        <div class="w-full max-w-xl text-center">
+            <h2 class="text-4xl font-bold mb-8 tracking-wide">Contact Me</h2>
+            
+            <form id="contact-form" class="flex flex-col gap-5">
+                <input type="text" name="name1" placeholder="Your Name" required 
+                    class="w-full p-4 rounded-md bg-whitesmoke text-black focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                
+                <input type="email" name="email1" placeholder="Your Email" required 
+                    class="w-full p-4 rounded-md bg-whitesmoke text-black focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                
+                <textarea name="message1" placeholder="Your Message" rows="6" required 
+                    class="w-full p-4 rounded-md bg-whitesmoke text-black focus:outline-none focus:ring-2 focus:ring-cyan-500"></textarea>
+                
+                <button type="submit" 
+                    class="w-full p-4 bg-white text-black font-bold tracking-widest hover:bg-cyan-500 hover:text-white transition-colors duration-300 rounded-md">
+                    SEND MESSAGE
+                </button>
 
-   <section class="contact" id="contact">
-  <div class="contact-container">
-    <h2>Contact Me</h2>
+                <a href="submission.html" 
+                     class="w-full p-4 bg-white text-black text-center uppercase font-bold tracking-widest hover:bg-cyan-500 hover:text-white transition-colors duration-300 rounded-md block">
+                      View Submissions
+                   </a>
+            </form>
 
-    <form class="contact-form" id="contact-form">
-      <input type="text" placeholder="Your Name" name="name1" required>
-      <input type="email" placeholder="Your Email" name="email1" required>
-      <textarea placeholder="Your Message" rows="6" name="message1" required> </textarea>
-      <button type="submit">SEND MESSAGE</button>
-    </form>
-  </div>    
-</section>
+        </div>
+    </section>
 
-<script src="script.js"></script>     
+    <script src="script.js"></script>
 </body>
 </html>
