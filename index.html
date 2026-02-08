@@ -1,18 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Link HTML and CSS Example</title>
-    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css"> 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
 </head>
+  <body class="m-0 p-0 bg-[#100f0f] animate-[fadeIn_2s_ease_forwards] scroll-smooth overflow-auto">
+    <header>
+      <nav class="h-[50px] md:h-[60px] flex fixed top-0 left-0 w-full z-[1000] items-center px-4">
+       <div class="flex flex-1 justify-center items-center gap-7 md:gap-4 text-base md:text-sm">
+          <a class=" relative group text-white font-extrabold transition duration-300 ease-in-out hover:text-[#fff] hover:-translate-y-1" href="#Home-Page">
+            Home
+            <span class="absolute left-0 -bottom-[5px] h-[2px] w-0 bg-[#fff] transition-[width] duration-300 ease-in-out group-hover:w-full"></span>
+          </a>
+          <a class="relative group text-white font-extrabold transition duration-300 ease-in-out hover:text-[#fff] hover:-translate-y-1" href="#About-Page">
+            About
+            <span class="absolute left-0 -bottom-[5px] h-[2px] w-0 bg-[#fff] transition-[width] duration-300 ease-in-out group-hover:w-full"></span>
+          </a>
+          <a class="relative group text-white font-extrabold transition duration-300 ease-in-out hover:text-[#fff] hover:-translate-y-1" href="#Project-Page">
+            Projects
+            <span class="absolute left-0 -bottom-[5px] h-[2px] w-0 bg-[#fff] transition-[width] duration-300 ease-in-out group-hover:w-full"></span>
+          </a>
+          <a class="relative group text-white font-extrabold transition duration-300 ease-in-out hover:text-[#fff] hover:-translate-y-1" href="#Contact-Page">
+            Contact
+            <span class="absolute left-0 -bottom-[5px] h-[2px] w-0 bg-[#fff] transition-[width] duration-300 ease-in-out group-hover:w-full"></span>
+          </a>
+        </div>
+      </nav>
+    </header>
 
-<body>
-    <h1>Hello, World!</h1>
-    <p>This is styled using an external CSS file.</p>
-</body>
+  <section id="Home-Page" class="flex flex-col md:flex-row min-h-screen w-full relative">
 
+  <div class="flex-1 flex justify-center items-center relative">
+    <img
+      src="resources/my profile"
+      alt="Profile Picture"
+      class="
+        w-[220px] h-[220px]
+        sm:w-[280px] sm:h-[280px]
+        md:w-[400px] md:h-[400px]
+        rounded-full border-4 border-violet-400 shadow-lg
+        md:absolute md:top-[30%] md:left-[10%]
+      "
+    />
+  </div>
+
+  <div class="flex-1 flex flex-col justify-center px-6 sm:px-10 md:px-[10%] relative text-center md:text-left">
+
+    <h1
+      class="
+        font-bold italic
+        text-3xl sm:text-4xl md:text-[50px]
+        mb-4
+        md:absolute md:top-[30%] md:right-[40%]
+      "
+    >
+      Renalyn Bulotano
+    </h1>
+
+    <p class="font-semibold text-sm sm:text-base md:text-lg text-blue-100 max-w-md mx-auto md:mx-0">
+      I'm a passionate web designer proficient in UI design, front-end development.
+      With a keen eye for aesthetics and a commitment to creating seamless user experiences,
+      I specialize in crafting visually stunning websites that captivate audiences and drive engagement.
+    </p>
+
+  </div>
+
+</section>
+
+  <section id="Contact-Page" class="flex-1 mb-20 py-20 container mx-auto px-6 min-h-screen flex flex-col justify-center ">
+
+    <h2 class="text-3xl text-white font-bold text-center mb-12">Contact Me</h2>
+
+
+    </div>
+      <form id="contact-form" class="w-full max-w-lg lg:max-w-xl mx-auto flex flex-col gap-6">
+        <input type="text" name="name" placeholder="Name" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#486581]" required>
+        <input type="text" name="contact" placeholder="Contact No" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#486581]" required>
+        <input type="email" name="email" placeholder="Email" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#486581]" required>
+        <textarea name="message" rows="5" placeholder="Message" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#486581]" required></textarea>
+        <button type="submit" class="w-full bg-[#486581] text-white font-bold py-3 rounded transition-colors duration-300 hover:bg-[#102a43]">
+          SEND MESSAGE
+        </button>
+      </form>
+
+    <div id="form-message" class="mt-6 text-sm font-medium px-4 py-2 rounded w-full max-w-lg lg:max-w-xl mx-auto h-10 opacity-0 text-center"></div>
+   </section>
+  </body>
 </html>
- 
-<!--  This is just a test  -->
+
