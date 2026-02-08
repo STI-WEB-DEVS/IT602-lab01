@@ -35,11 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// ============================================
-// SMOOTH SCROLL IMPLEMENTATION
-// ============================================
 
-// Enhanced smooth scroll for all anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -56,11 +52,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ============================================
-// CTA SECTION SCROLL ANIMATIONS
-// ============================================
 
-// Intersection Observer for scroll-triggered animations
 const observerOptions = {
     root: null,
     rootMargin: '0px',
@@ -79,7 +71,6 @@ const animateOnScroll = (entries, observer) => {
 
 const observer = new IntersectionObserver(animateOnScroll, observerOptions);
 
-// Observe CTA elements when DOM is ready
 window.addEventListener('DOMContentLoaded', () => {
     const ctaDescription = document.querySelector('.cta-description');
     const ctaFormWrapper = document.querySelector('.cta-form-wrapper');
@@ -87,30 +78,30 @@ window.addEventListener('DOMContentLoaded', () => {
     if (ctaDescription) observer.observe(ctaDescription);
     if (ctaFormWrapper) observer.observe(ctaFormWrapper);
     
-    // Contact Form Handler
+
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            // Get form data
+
             const formData = {
                 name: document.getElementById('name').value,
                 email: document.getElementById('email').value,
                 message: document.getElementById('message').value
             };
             
-            // Log form data (replace with your actual submission logic)
+
             console.log('Form submitted:', formData);
             
-            // Show success message
+
             const submitBtn = contactForm.querySelector('.submit-btn');
             const originalText = submitBtn.querySelector('span').textContent;
             submitBtn.querySelector('span').textContent = 'Message Sent!';
             submitBtn.style.backgroundColor = 'rgba(100, 255, 150, 0.2)';
             submitBtn.style.borderColor = 'rgba(100, 255, 150, 0.5)';
             
-            // Reset form after 2 seconds
+
             setTimeout(() => {
                 contactForm.reset();
                 submitBtn.querySelector('span').textContent = originalText;
@@ -121,11 +112,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// ============================================
-// SMOOTH SCROLL EASING
-// ============================================
 
-// Custom smooth scroll with easing (optional enhancement)
 function smoothScrollTo(target, duration = 1000) {
     const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
     const startPosition = window.pageYOffset;
@@ -154,9 +141,7 @@ function smoothScrollTo(target, duration = 1000) {
     requestAnimationFrame(animation);
 }
 
-// ============================================
-// PARALLAX EFFECT FOR DECORATIVE ELEMENTS
-// ============================================
+
 
 let ticking = false;
 function updateParallax() {
@@ -179,81 +164,57 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// ============================================
-// CTA SECTION ANIMATIONS
-// ============================================
 
-// CTA Section Animations
+/* ==================================
+   CTA SECTION - SCROLL BEHAVIOR
+   ================================== */
+
 document.addEventListener('DOMContentLoaded', function() {
     const ctaSection = document.getElementById('cta-section');
     const scrollIndicator = document.querySelector('.scroll-indicator');
-    const ctaLines = document.querySelectorAll('.cta-line');
-    const ctaDots = document.querySelectorAll('.cta-dot');
     
-    // Intersection Observer for CTA Section
+    // Hide scroll indicator when CTA section is in view
     const ctaObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Trigger line and dot animations
-                setTimeout(() => {
-                    ctaLines.forEach(line => {
-                        line.classList.add('animate-in');
-                    });
-                    ctaDots.forEach(dot => {
-                        dot.classList.add('animate-in');
-                    });
-                }, 300);
-                
-                // Hide scroll indicator
-                if (scrollIndicator) {
-                    scrollIndicator.style.opacity = '0';
-                    scrollIndicator.style.visibility = 'hidden';
-                    scrollIndicator.style.transition = 'opacity 0.6s ease, visibility 0.6s ease';
-                }
-                
-                // Only trigger once
-                ctaObserver.unobserve(entry.target);
+            if (entry.isIntersecting && scrollIndicator) {
+                scrollIndicator.style.opacity = '0';
+                scrollIndicator.style.visibility = 'hidden';
+            } else if (scrollIndicator) {
+                scrollIndicator.style.opacity = '1';
+                scrollIndicator.style.visibility = 'visible';
             }
         });
-    }, {
-        threshold: 0.3 // Trigger when 30% of the section is visible
-    });
+    }, { threshold: 0.3 });
     
     if (ctaSection) {
         ctaObserver.observe(ctaSection);
     }
 });
 
-// ============================================
-// FORM VALIDATION AND SUBMISSION
-// ============================================
+/* ==================================
+   CTA FORM - VALIDATION & SUBMISSION
+   ================================== */
 
-document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.getElementById('contact-form');
-    const submitBtn = document.getElementById('submit-btn');
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
     
-    if (!contactForm) return;
-    
-    // Form fields
     const nameInput = document.getElementById('name');
     const emailInput = document.getElementById('email');
     const messageInput = document.getElementById('message');
     
-    // Error messages
     const nameError = document.getElementById('name-error');
     const emailError = document.getElementById('email-error');
     const messageError = document.getElementById('message-error');
     
-    // Success/Error messages
-    const successMessage = document.getElementById('success-message');
-    const errorMessage = document.getElementById('error-message');
-    const formMessages = document.getElementById('form-messages');
+    const submitBtn = form.querySelector('.submit-btn');
+    const formStatus = document.getElementById('form-status');
     
-    // Validation functions
+    // Validation Functions
     function validateName() {
         const value = nameInput.value.trim();
         if (value.length < 2) {
-            showError(nameInput, nameError);
+            showError(nameInput, nameError, 'Name must be at least 2 characters');
             return false;
         }
         showSuccess(nameInput, nameError);
@@ -262,9 +223,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function validateEmail() {
         const value = emailInput.value.trim().toLowerCase();
-        const emailPattern = /^[a-z0-9._%+-]+@([a-z0-9.-]+\.)+[a-z]{2,}$/;
-        if (!emailPattern.test(value)) {
-            showError(emailInput, emailError);
+        const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+        if (!emailRegex.test(value)) {
+            showError(emailInput, emailError, 'Please enter a valid email address');
             return false;
         }
         showSuccess(emailInput, emailError);
@@ -274,34 +235,50 @@ document.addEventListener('DOMContentLoaded', function() {
     function validateMessage() {
         const value = messageInput.value.trim();
         if (value.length < 10) {
-            showError(messageInput, messageError);
+            showError(messageInput, messageError, 'Message must be at least 10 characters');
             return false;
         }
         showSuccess(messageInput, messageError);
         return true;
     }
     
-    function showError(input, errorElement) {
+    // UI Helpers
+    function showError(input, errorElement, message) {
         input.classList.add('error');
         input.classList.remove('success');
-        errorElement.classList.remove('hidden');
-        errorElement.classList.add('show');
+        if (errorElement) {
+            errorElement.textContent = message;
+        }
     }
     
     function showSuccess(input, errorElement) {
         input.classList.remove('error');
         input.classList.add('success');
-        errorElement.classList.remove('show');
-        setTimeout(() => errorElement.classList.add('hidden'), 300);
+        if (errorElement) {
+            errorElement.textContent = '';
+        }
     }
     
     function clearValidation(input, errorElement) {
         input.classList.remove('error', 'success');
-        errorElement.classList.remove('show');
-        setTimeout(() => errorElement.classList.add('hidden'), 300);
+        if (errorElement) {
+            errorElement.textContent = '';
+        }
     }
     
-    // Real-time validation
+    function showFormStatus(message, type) {
+        formStatus.textContent = message;
+        formStatus.className = `form-status ${type}`;
+        
+        if (type === 'success') {
+            setTimeout(() => {
+                formStatus.textContent = '';
+                formStatus.className = 'form-status';
+            }, 5000);
+        }
+    }
+    
+    // Event Listeners - Validate on blur
     nameInput.addEventListener('blur', validateName);
     emailInput.addEventListener('blur', validateEmail);
     messageInput.addEventListener('blur', validateMessage);
@@ -312,19 +289,21 @@ document.addEventListener('DOMContentLoaded', function() {
             clearValidation(nameInput, nameError);
         }
     });
+    
     emailInput.addEventListener('input', () => {
         if (emailInput.classList.contains('error') || emailInput.classList.contains('success')) {
             clearValidation(emailInput, emailError);
         }
     });
+    
     messageInput.addEventListener('input', () => {
         if (messageInput.classList.contains('error') || messageInput.classList.contains('success')) {
             clearValidation(messageInput, messageError);
         }
     });
     
-    // Form submission
-    contactForm.addEventListener('submit', async function(e) {
+    // Form Submission
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
         
         // Validate all fields
@@ -333,53 +312,35 @@ document.addEventListener('DOMContentLoaded', function() {
         const isMessageValid = validateMessage();
         
         if (!isNameValid || !isEmailValid || !isMessageValid) {
+            showFormStatus('Please fix the errors above', 'error');
             return;
         }
         
         // Show loading state
         submitBtn.disabled = true;
         submitBtn.classList.add('loading');
+        formStatus.textContent = '';
+        formStatus.className = 'form-status';
         
-        // Hide previous messages
-        successMessage.classList.add('hidden');
-        errorMessage.classList.add('hidden');
-        formMessages.classList.add('hidden');
-        
-        // Simulate form submission (replace with actual API call)
         try {
-            // Simulate API delay
+            // Simulate form submission (replace with actual API call)
             await new Promise(resolve => setTimeout(resolve, 2000));
             
-            // Show success message
-            formMessages.classList.remove('hidden');
-            successMessage.classList.remove('hidden');
-            
-            // Reset form
-            contactForm.reset();
+            // Success
+            showFormStatus('✓ Message sent successfully! I\'ll get back to you soon.', 'success');
+            form.reset();
             clearValidation(nameInput, nameError);
             clearValidation(emailInput, emailError);
             clearValidation(messageInput, messageError);
             
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                successMessage.classList.add('hidden');
-                formMessages.classList.add('hidden');
-            }, 5000);
-            
         } catch (error) {
-            // Show error message
-            formMessages.classList.remove('hidden');
-            errorMessage.classList.remove('hidden');
-            
-            // Hide error message after 5 seconds
-            setTimeout(() => {
-                errorMessage.classList.add('hidden');
-                formMessages.classList.add('hidden');
-            }, 5000);
+            // Error
+            showFormStatus('✗ Something went wrong. Please try again later.', 'error');
         } finally {
-            // Remove loading state
+            // Reset button state
             submitBtn.disabled = false;
             submitBtn.classList.remove('loading');
         }
     });
 });
+
