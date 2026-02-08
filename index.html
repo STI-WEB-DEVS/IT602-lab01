@@ -145,17 +145,23 @@
 
     <!-- IMAGE -->
     <div class="flex justify-center mt-10 md:mt-0">
-      <div
-        class="w-[350px] h-[350px] lg:w-[420px] lg:h-[420px] rounded-full p-3 bg-gradient-to-br from-primary to-accent shadow-2xl hover:scale-105 hover:shadow-[0_25px_50px_-12px_rgba(91,45,139,0.4)] transition-all duration-500">
+      <div class="w-48 h-48
+           sm:w-64 sm:h-64
+           md:w-72 md:h-72
+           lg:w-96 lg:h-96
+           rounded-full p-3
+           bg-gradient-to-br from-primary to-accent
+           shadow-2xl
+           hover:scale-105
+           transition-all duration-500">
         <img src="images/my-photo.jpg" class="w-full h-full rounded-full object-cover bg-white">
       </div>
     </div>
   </section>
 
-
+  
   <!-- CONTACT MODAL -->
-  <div id="contact"
-    class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+  <div id="contact" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
     <div class="bg-white rounded-3xl shadow-2xl max-w-4xl w-full overflow-hidden">
       <div class="flex flex-col md:flex-row">
 
@@ -178,6 +184,12 @@
             <div class="relative">
               <i class="fas fa-envelope absolute left-4 top-4 text-primary"></i>
               <input type="email" id="userEmail" placeholder="Email" required
+                class="w-full pl-12 pr-4 py-3 rounded-xl bg-blue-50 border-2 border-transparent focus:border-primary focus:bg-white transition outline-none">
+            </div>
+
+            <div class="relative">
+              <i class="fas fa-phone absolute left-4 top-4 text-primary"></i>
+              <input type="tel" id="userContact" placeholder="Contact No." required
                 class="w-full pl-12 pr-4 py-3 rounded-xl bg-blue-50 border-2 border-transparent focus:border-primary focus:bg-white transition outline-none">
             </div>
 
@@ -218,7 +230,7 @@
     </div>
   </div>
   <script>
-    
+
     function openModal() {
       document.getElementById('contact').classList.remove('hidden');
     }
@@ -232,6 +244,7 @@
       // getting values from the form
       const name = document.getElementById('userName').value;
       const email = document.getElementById('userEmail').value;
+      const contact = document.getElementById('userContact').value;
       const message = document.getElementById('userMessage').value;
 
       // Kuhaon ang existing rows sa local storage
@@ -241,6 +254,7 @@
       rows.push({
         name: name,
         email: email,
+        contact: contact,
         message: message
       });
 
