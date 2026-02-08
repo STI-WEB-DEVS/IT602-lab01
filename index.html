@@ -132,31 +132,35 @@
   </div>
 </section>
 
-<section id="contact" class="bg-white text-[midnightblue] px-6 py-20 scroll-mt-20">
-  <div class="max-w-xl mx-auto text-center">
-
-    <h2 class="text-4xl font-bold mb-10 tracking-wide">
-      Contact Me
-    </h2>
-
-    <form class="space-y-5">
-      <input type="text" placeholder="Your Name"
-        class="w-full p-4 rounded-md border bg-gray-100 focus:bg-white focus:border-[midnightblue] outline-none">
-
-      <input type="email" placeholder="Your Email"
-        class="w-full p-4 rounded-md border bg-gray-100 focus:bg-white focus:border-[midnightblue] outline-none">
-
-      <textarea rows="6" placeholder="Your Message"
-        class="w-full p-4 rounded-md border bg-gray-100 focus:bg-white focus:border-[midnightblue] outline-none"></textarea>
-
-      <button
-        class="w-full py-4 bg-[midnightblue] text-white font-bold tracking-widest rounded-md hover:bg-blue-900 transition">
+<section id="contact" class="bg-white text-[midnightblue] min-h-screen flex justify-center items-center px-8 pt-32">
+  <div class="w-full max-w-xl text-center">
+      <h2 class="text-4xl font-bold mb-8 tracking-wide">Contact Me</h2>
+      
+      <form id="contact-form" class="flex flex-col gap-5">
+        <input type="text" name="name1" placeholder="Your Name" required 
+            class="w-full p-4 rounded-md bg-whitesmoke text-black focus:outline-none focus:ring-2 focus:ring-cyan-500">
+        
+        <input type="email" name="email1" placeholder="Your Email" required 
+            class="w-full p-4 rounded-md bg-whitesmoke text-black focus:outline-none focus:ring-2 focus:ring-cyan-500">
+        
+        <textarea name="message1" placeholder="Your Message" rows="6" required 
+            class="w-full p-4 rounded-md bg-whitesmoke text-black focus:outline-none focus:ring-2 focus:ring-cyan-500"></textarea>
+        
+      <button type="submit" 
+        class="w-full p-4 bg-white text-black font-bold tracking-widest hover:bg-cyan-500 hover:text-white transition-colors duration-300 rounded-md">
         SEND MESSAGE
       </button>
-    </form>
 
+      <a href="sub.html" 
+         class="w-full p-4 bg-white text-black text-center uppercase font-bold tracking-widest hover:bg-cyan-500 hover:text-white transition-colors duration-300 rounded-md block">
+         View Submissions
+      </a>
+
+    </form>
   </div>
 </section>
+
+<script src="script.js"></script>
 
 </body>
 </html>
