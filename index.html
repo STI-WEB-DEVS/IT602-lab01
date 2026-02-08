@@ -8,43 +8,167 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="main.css">
     <link rel="icon" type="image/x-icon" href="/src/profweb.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <header>
-        <a href="#" class="logo">Raf</a>
+<body class="bg-gray-800">
+    <header class="fixed top-0 left-0 w-full px-9 py-4 flex items-center justify-between bg-gray-800 z-50">
+        <a href="#" class="text-3xl font-extrabold text-sky-400 hover:scale-110 transition">
+            Raf
+        </a>
 
+        <nav
+            id="mobile-menu"
+            class="hidden absolute top-full right-0 w-2/5
+                    flex flex-col gap-4 p-4
+                    bg-gray-900 border-l-4 border-sky-400
+                    rounded-bl-2xl
+                    md:static md:flex md:flex-row md:gap-0 md:p-0
+                    md:w-auto md:bg-transparent md:border-none md:rounded-none"
+            >
 
-        <nav>
-            <a href="#" class="active">Home</a>
-            <a href="#" >Services</a>
-            <a href="#" >Skills</a>
-            <a href="#" >Edution</a>
-            <a href="#" >Experience</a>
-            <a href="#" >Contact</a>
+            <a href="#" class="ml-16 text-lg font-medium text-sky-400 border-b-4 border-sky-400 pb-1">
+            Home
+            </a>
+            <a href="#" class="ml-16 text-lg font-medium text-white hover:text-sky-400 hover:border-b-4 hover:border-sky-400 pb-1 transition">
+                Services
+            </a>
+            <a href="#" class="ml-16 text-lg font-medium text-white hover:text-sky-400 hover:border-b-4 hover:border-sky-400 pb-1 transition">
+                Skills
+            </a>
+            <a href="#" class="ml-16 text-lg font-medium text-white hover:text-sky-400 hover:border-b-4 hover:border-sky-400 pb-1 transition">
+                Education
+            </a>
+            <a href="#" class="ml-16 text-lg font-medium text-white hover:text-sky-400 hover:border-b-4 hover:border-sky-400 pb-1 transition">
+                Experience
+            </a>
+            <a href="#" class="ml-16 text-lg font-medium text-white hover:text-sky-400 hover:border-b-4 hover:border-sky-400 pb-1 transition">
+                Contact
+            </a>
+
         </nav>
+
+        <button
+            id="menu-btn"
+            class="md:hidden text-white text-3xl focus:outline-none"
+            aria-label="Toggle menu"
+        >
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
     </header>
-    <section class="home">
-        <div class="home-img">
-            <img src="src/profweb.jpg" alt="profile">
+
+
+    <section class="min-h-screen flex flex-col md:flex-row items-center justify-center gap-32 px-9 pt-32">
+        <div class="rounded-full">
+            <img
+                src="src/profweb.jpg"
+                alt="profile"
+                class="w-[320px] md:w-[32vw] rounded-full cursor-pointer transition hover:scale-105 shadow-lg"
+            />
         </div>
-        <div class="home-content">
-            <h1>Hi, it's <span>Rafael</span></h1>
-            <h3 class="typing-text">
-                I'm a <span></span>
+
+        <div>
+            <h2 class="text-3xl font-bold">
+                Hi, it's <span class="text-sky-400">Rafael</span>
+            </h2>
+
+            <h3 class="text-4xl font-bold mb-4">
+                I'm a <span class="text-sky-400">Web Developer</span>
             </h3>
 
-            <p>Aspiring developer eager to learn, grow, and apply my skills in real-world projects while continuously improving my craft.
+            <p class="max-w-md mb-6">
+                Aspiring developer eager to learn, grow, and apply my skills in real-world projects while continuously improving my craft.
             </p>
-            <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#"><i class="fa-brands fa-github"></i></a>
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+
+            <div class="flex gap-6 mb-6">
+                <a class="w-16 h-16 flex items-center justify-center rounded-full border-2 border-sky-400 hover:bg-sky-400 hover:text-black transition text-xl">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a class="w-16 h-16 flex items-center justify-center rounded-full border-2 border-sky-400 hover:bg-sky-400 hover:text-black transition text-xl">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a class="w-16 h-16 flex items-center justify-center rounded-full border-2 border-sky-400 hover:bg-sky-400 hover:text-black transition text-xl">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a class="w-16 h-16 flex items-center justify-center rounded-full border-2 border-sky-400 hover:bg-sky-400 hover:text-black transition text-xl">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
             </div>
-            <a href="#" class="btn">Hire me</a> 
+
+            <a
+                href="#"
+                class="inline-block px-12 py-4 border-2 border-sky-400 rounded-full text-sky-400 tracking-widest font-semibold hover:bg-sky-400 hover:text-black transition"
+            >
+                HIRE ME
+            </a>
         </div>
     </section>
+
+
+    <section
+        id="contact"
+        class="min-h-screen flex flex-col justify-center px-6"
+    >
+        <h2 class="text-3xl font-bold text-center mb-12">
+            Contact Me
+        </h2>
+
+        <form
+            id="contact-form"
+            class="flex flex-col gap-6 border border-gray-600 rounded-md
+                w-full max-w-xl mx-auto p-6"
+        >
+            <label class="flex flex-col gap-1">
+                <span class="text-gray-400">Name</span>
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    class="px-4 py-2 bg-transparent border border-gray-500 rounded-md focus:border-white focus:outline-none"
+                    required
+                />
+            </label>
+
+            <label class="flex flex-col gap-1">
+                <span class="text-gray-400">Email</span>
+                <input
+                    name="email"
+                    type="email"
+                    placeholder="you@example.com"
+                    class="px-4 py-2 bg-transparent border border-gray-500 rounded-md focus:border-white focus:outline-none"
+                    required
+                />
+            </label>
+
+            <label class="flex flex-col gap-1">
+                <span class="text-gray-400">Message</span>
+                <textarea
+                id="message"
+                    rows="4"
+                    placeholder="Your Message"
+                    class="px-4 py-2 bg-transparent border border-gray-500 rounded-md focus:border-white focus:outline-none"
+                    required
+                ></textarea>
+            </label>
+
+            <button
+                type="submit"
+                class="border border-gray-500 py-3 rounded-md tracking-widest hover:bg-white hover:text-black transition"
+            >
+                SEND MESSAGE
+            </button>
+
+            <button
+                type="button"
+                class="border border-gray-500 py-3 rounded-md tracking-widest hover:bg-white hover:text-black transition"
+            >
+                VIEW SUBMISSION
+            </button>
+        </form>
+    </section>
+
+    <script src="action.js"></script>
 </body>
 
 </html>
