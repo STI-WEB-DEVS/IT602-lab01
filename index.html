@@ -4,36 +4,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Link HTML and CSS Example</title>
-    <link rel="stylesheet" href="main.css">
+    <title>Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
 </head>
 
-<body>
-    <header>
-        <h1>Welcome, I'm Jhon</h1>
-        <nav>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-        </nav>
+<body class="bg-gray-50">
+    <header class="bg-gray-800 text-white py-6 px-8 shadow-lg fixed w-full top-0 z-50">
+        <div class="flex justify-between items-center">
+            <h1 class="text-2xl font-bold mb-2">Welcome</h1>
+            <nav class="flex gap-6">
+                <a href="#hero" class="hover:text-purple-400 transition-colors">About</a>
+                <a href="#contact" class="hover:text-purple-400 transition-colors">Contact</a>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h2>Hello, I’m Jhon</h2>
-                <h3>BSIT 602</h3>
-                <p>
-                    Third year STI College Student.
+    <main class="pt-20">
+        <section id="hero" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-800 text-white">
+            <div class="text-center px-8">
+                <h2 class="text-6xl font-bold mb-4">Hello, I'm Jhon</h2>
+                <h3 class="text-3xl mb-6 opacity-90">Information Technology</h3>
+                <p class="text-xl opacity-95 max-w-2xl mx-auto">
+                    Passionate about creating intuitive and engaging user experiences.<br>
+                    Specialize in transforming ideas into beautifully crafted products.
                 </p>
+            </div>
+        </section>
+
+        <section id="contact" class="min-h-screen flex items-center justify-center py-16 px-8">
+            <div class="max-w-2xl w-full bg-white rounded-lg shadow-xl p-8">
+                <h2 class="text-4xl font-bold text-gray-800 mb-2 pb-4 border-b-4 border-purple-600">Contact Me</h2>
+                
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6 rounded">
+                    <p class="text-blue-700">
+                        <span class="font-semibold">Messages sent: <span id="messageCount" class="text-blue-900 text-xl">0</span></span>
+                    </p>
+                </div>
+
+                <form id="contactForm" class="space-y-6">
+                    <input type="hidden" id="contactId">
+
+                    <div class="flex flex-col">
+                        <label class="font-semibold text-gray-700 mb-2">
+                            Name:
+                        </label>
+                        <input type="text" id="name" required 
+                            class="px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-purple-600 transition-colors">
+                    </div>
+
+                    <div class="flex flex-col">
+                        <label class="font-semibold text-gray-700 mb-2">
+                            Email:
+                        </label>
+                        <input type="email" id="email" required 
+                            class="px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-purple-600 transition-colors">
+                    </div>
+
+                    <div class="flex flex-col">
+                        <label class="font-semibold text-gray-700 mb-2">
+                            Message:
+                        </label>
+                        <textarea id="message" required 
+                            class="px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-purple-600 transition-colors min-h-32 resize-y"></textarea>
+                    </div>
+
+                    <button type="submit" 
+                        class="w-full py-3 px-6 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors shadow-md">
+                        Save
+                    </button>
+                </form>
             </div>
         </section>
     </main>
 
-    <footer>
+    <footer class="bg-gray-800 text-white text-center py-6">
         <p>&copy; 2026 BSIT602.</p>
     </footer>
+
 </body>
 
 </html>
- 
-<!--  This is just a test  -->
