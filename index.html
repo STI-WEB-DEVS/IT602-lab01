@@ -3,58 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joshua Galo | Portfolio </title>
-    
+    <title>Joshua Galo | Portfolio</title>
     <link rel="stylesheet" href="main.css">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
 </head>
-<body>
+<body class="bg-[#05070a] text-white transition-colors duration-300 overflow-x-hidden">
 
-    <nav>
-        <div class="logo">
-            <div class="logo-blob"></div>
+    <div id="loader" class="fixed inset-0 z-[100] flex items-center justify-center bg-[#05070a] transition-opacity duration-700">
+        <div class="relative flex flex-col items-center">
+            <div class="w-16 h-16 border-4 border-[#3d7eff]/20 border-t-[#3d7eff] rounded-full animate-spin"></div>
+            <h2 class="mt-4 text-white font-bold tracking-[5px] animate-pulse text-xs uppercase">Loading Portfolio</h2>
+        </div>
+    </div>
+
+    <div id="backToTop" onclick="scrollToTop()" class="fixed bottom-8 right-8 w-12 h-12 bg-[#3d7eff] rounded-full hidden items-center justify-center cursor-pointer z-50 shadow-lg hover:-translate-y-1 transition duration-300">
+        <i class="fas fa-arrow-up text-white"></i>
+    </div>
+
+    <nav class="flex justify-between items-center py-8 px-[6%] absolute w-full z-10">
+        <div class="flex items-center gap-3 font-bold text-xl nav-brand">
+            <div class="w-5 h-5 bg-[#3d7eff] rounded-tr-none rounded-full"></div>
             Joshua Galo
         </div>
-        <ul>
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
+        <ul class="hidden lg:flex items-center gap-8 text-sm font-medium nav-links">
+            <li><a href="#home" class="hover:text-[#3d7eff] transition">Home</a></li>
+            <li><a href="#about" class="hover:text-[#3d7eff] transition">About</a></li>
+            <li><a href="#services" class="hover:text-[#3d7eff] transition">Services</a></li>
+            <li><a href="#contact-section" class="hover:text-[#3d7eff] transition">Contact</a></li>
+            <li>
+                <button id="theme-toggle" class="p-2 border border-gray-700 rounded-lg hover:border-[#3d7eff] transition">
+                    <i id="theme-icon" class="fas fa-moon"></i>
+                </button>
+            </li>
         </ul>
     </nav>
 
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h5>Welcome to my portfolio!</h5>
-                <h1>Hello, I'm<br><span>joshua.</span></h1>
-                <p> I build modern, clean, and user-focused websites with attention to performance and design.</p>
-                
-                <div class="cta-group">
-                    <a href="#" class="btn btn-blue">Download cv</a>
-                    <a href="#" class="btn btn-outline">See my work <i class="fas fa-arrow-right"></i></a>
+    <section id="home" class="min-h-screen flex items-center px-[6%] relative bg-radial">
+        <div class="grid lg:grid-cols-2 items-center w-full gap-12 mt-20 lg:mt-0 hero-entry">
+            <div class="space-y-6 text-center lg:text-left">
+                <h5 class="text-[#3d7eff] font-extrabold tracking-widest uppercase text-sm">Welcome To My Portfolio!</h5>
+                <h1 class="text-5xl md:text-8xl font-black leading-tight main-title text-white">Hello, I'm<br><span class="text-[#3d7eff]">Joshua.</span></h1>
+                <p class="text-gray-400 text-lg max-w-md mx-auto lg:mx-0">I build modern, clean, and user-focused websites with attention to performance and design.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#" class="bg-[#3d7eff] text-white px-8 py-4 rounded-full font-bold shadow-lg hover:brightness-110 transition transform hover:-translate-y-1 text-center">Download CV</a>
+                    <a href="#contact-section" class="border border-gray-700 px-8 py-4 rounded-full font-bold transition hover:bg-white/5 text-center section-btn">See my work <i class="fas fa-arrow-right ml-2"></i></a>
                 </div>
             </div>
-
-            <div class="hero-visual">
-                <div class="image-frame">
-                    <img src="image.jpg" alt="joshua Galo">
+            <div class="flex justify-center relative">
+                <div class="w-64 h-64 md:w-[450px] md:h-[450px] rounded-full overflow-hidden border border-white/10 shadow-2xl z-10 image-float">
+                    <img src="image.jpg" alt="Joshua Galo" class="w-full h-full object-cover">
                 </div>
-                <div class="shape pyramid"></div>
-                <div class="shape spiral"><i class="fas fa-certificate"></i></div>
             </div>
         </div>
 
-        <div class="sidebar">
-            <span>FOLLOW ME ON</span>
-            <div class="line"></div>
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-tiktok"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+        <div class="hidden lg:flex absolute right-10 bottom-20 flex-col items-center gap-6 social-sidebar">
+            <span class="rotate-180 [writing-mode:vertical-lr] text-[13px] tracking-[4px] text-gray-500 uppercase">Follow me @joshua galo</span>
+            <div class="w-px h-13 bg-gray-800"></div>
+            <a href="#" class="text-gray-500 hover:text-[#3d7eff] transition"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-500 hover:text-[#3d7eff] transition"><i class="fab fa-tiktok"></i></a>
+            <a href="#" class="text-gray-500 hover:text-[#3d7eff] transition"><i class="fab fa-instagram"></i></a>
         </div>
+    </section>
 
+    <section id="about" class="py-24 px-[6%] section-bg">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div class="space-y-6">
+                <h2 class="text-4xl font-bold section-title">About <span class="text-[#3d7eff]">Me</span></h2>
+                <p class="text-gray-400 leading-relaxed">I am a passionate web developer focused on creating interactive and responsive web applications. My goal is to bridge the gap between design and functionality.</p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="p-4 bg-white/5 rounded-xl border border-gray-800 card-bg">
+                        <h4 class="text-[#3d7eff] font-bold text-xl">3+</h4>
+                        <p class="text-xs text-gray-500 uppercase">Years Experience</p>
+                    </div>
+                    <div class="p-4 bg-white/5 rounded-xl border border-gray-800 card-bg">
+                        <h4 class="text-[#3d7eff] font-bold text-xl">10+</h4>
+                        <p class="text-xs text-gray-500 uppercase">Projects Done</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="h-32 bg-gray-900/50 rounded-2xl border border-gray-800 flex items-center justify-center italic text-gray-500 card-bg">HTML/CSS</div>
+                <div class="h-32 bg-gray-900/50 rounded-2xl border border-gray-800 flex items-center justify-center italic text-gray-500 card-bg">C#</div>
+                <div class="h-32 bg-gray-900/50 rounded-2xl border border-gray-800 flex items-center justify-center italic text-gray-500 card-bg">JavaScript</div>
+                <div class="h-32 bg-gray-900/50 rounded-2xl border border-gray-800 flex items-center justify-center italic text-gray-500 card-bg">UI Design</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 px-[6%] bg-black/10">
+        <div class="max-w-6xl mx-auto text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4 section-title">My <span class="text-[#3d7eff]">Services</span></h2>
+            <div class="w-20 h-1 bg-[#3d7eff] mx-auto rounded-full"></div>
+        </div>
+        <div class="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="p-8 bg-[#0a0c10] border border-gray-800 rounded-3xl hover:border-[#3d7eff] transition card-bg">
+                <i class="fas fa-code text-3xl text-[#3d7eff] mb-6"></i>
+                <h3 class="text-xl font-bold mb-3 section-title">Web Development</h3>
+                <p class="text-gray-500 text-sm">Clean, efficient code tailored to your business needs and scalable for future growth.</p>
+            </div>
+            <div class="p-8 bg-[#0a0c10] border border-gray-800 rounded-3xl hover:border-[#3d7eff] transition card-bg">
+                <i class="fas fa-mobile-alt text-3xl text-[#3d7eff] mb-6"></i>
+                <h3 class="text-xl font-bold mb-3 section-title">Responsive Design</h3>
+                <p class="text-gray-500 text-sm">Websites that look stunning on any device, from desktop monitors to small smartphones.</p>
+            </div>
+            <div class="p-8 bg-[#0a0c10] border border-gray-800 rounded-3xl hover:border-[#3d7eff] transition card-bg">
+                <i class="fas fa-paint-brush text-3xl text-[#3d7eff] mb-6"></i>
+                <h3 class="text-xl font-bold mb-3 section-title">UI/UX Design</h3>
+                <p class="text-gray-500 text-sm">User-centered designs focused on providing a seamless and intuitive navigation experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-section" class="py-24 px-[6%] border-t border-gray-900 section-bg">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-6 text-center lg:text-left">
+                    <h5 class="text-[#3d7eff] font-bold tracking-widest uppercase text-xs">Let's Connect</h5>
+                    <h2 class="text-5xl font-extrabold leading-tight section-title">Send me a <br><span class="text-[#3d7eff]">Message.</span></h2>
+                    <p class="text-gray-400 text-lg">Your responses are saved locally. Experience the full responsive design on any device.</p>
+                </div>
+                <div class="bg-[#0a0c10] p-8 rounded-3xl border border-gray-800 shadow-2xl card-bg">
+                    <form id="contactForm" class="space-y-4">
+                        <input type="text" id="name" placeholder="Full Name" required class="w-full bg-black/30 border border-gray-800 p-4 rounded-xl outline-none focus:border-[#3d7eff] transition input-field">
+                        <input type="text" id="contact" placeholder="Contact No." required class="w-full bg-black/30 border border-gray-800 p-4 rounded-xl outline-none focus:border-[#3d7eff] transition input-field">
+                        <input type="email" id="email" placeholder="Email Address" required class="w-full bg-black/30 border border-gray-800 p-4 rounded-xl outline-none focus:border-[#3d7eff] transition input-field">
+                        <textarea id="message" rows="4" placeholder="Your Message" required class="w-full bg-black/30 border border-gray-800 p-4 rounded-xl outline-none focus:border-[#3d7eff] transition input-field"></textarea>
+                        <button type="submit" class="w-full bg-[#3d7eff] text-white p-4 rounded-xl font-bold transition transform active:scale-95 hover:brightness-110">Submit Response</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="mt-24">
+                <div class="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4">
+                    <h2 class="text-2xl font-bold flex items-center gap-3 section-title"><i class="fas fa-database text-[#3d7eff]"></i> Local Records</h2>
+                    <button onclick="deleteAllRecords()" class="border border-gray-700 text-gray-400 px-6 py-2 rounded-full text-sm font-bold transition hover:bg-red-500 hover:text-white hover:border-red-500 w-full sm:w-auto">Delete All Records</button>
+                </div>
+
+                <div class="hidden md:block overflow-hidden bg-[#0a0c10] rounded-2xl border border-gray-800 card-bg">
+                    <table class="w-full text-left">
+                        <thead class="bg-gray-900/50 text-gray-500 uppercase text-xs">
+                            <tr>
+                                <th class="p-5">Name</th>
+                                <th class="p-5">Contact</th>
+                                <th class="p-5">Email</th>
+                                <th class="p-5">Message</th>
+                            </tr>
+                        </thead>
+                        <tbody id="responseTableDesktop" class="divide-y divide-gray-800"></tbody>
+                    </table>
+                </div>
+
+                <div id="responseTableMobile" class="md:hidden space-y-4"></div>
+                <div id="emptyState" class="hidden py-10 text-center text-gray-600 italic">No messages found.</div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const html = document.documentElement;
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('light');
+            if (html.classList.contains('light')) {
+                themeIcon.className = 'fas fa-sun text-yellow-500';
+                localStorage.setItem('theme', 'light');
+            } else {
+                themeIcon.className = 'fas fa-moon';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        if (localStorage.getItem('theme') === 'light') {
+            html.classList.add('light');
+            themeIcon.className = 'fas fa-sun text-yellow-500';
+        }
+
+        const form = document.getElementById('contactForm');
+        const desktopBody = document.getElementById('responseTableDesktop');
+        const mobileBody = document.getElementById('responseTableMobile');
+        const emptyState = document.getElementById('emptyState');
+        const loader = document.getElementById('loader');
+
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => { loader.style.display = 'none'; }, 700);
+            }, 800);
+        });
+
+        function loadMessages() {
+            const data = JSON.parse(localStorage.getItem('user_msgs')) || [];
+            if (data.length === 0) {
+                desktopBody.innerHTML = '';
+                mobileBody.innerHTML = '';
+                emptyState.classList.remove('hidden');
+            } else {
+                emptyState.classList.add('hidden');
+                desktopBody.innerHTML = data.map(item => `
+                    <tr class="hover:bg-white/5 transition">
+                        <td class="p-5 font-bold">${item.name}</td>
+                        <td class="p-5 text-gray-400">${item.contact}</td>
+                        <td class="p-5 text-[#3d7eff] text-sm">${item.email}</td>
+                        <td class="p-5 text-gray-500 italic text-sm">"${item.message}"</td>
+                    </tr>
+                `).join('');
+
+                mobileBody.innerHTML = data.map(item => `
+                    <div class="bg-[#0a0c10] border border-gray-800 p-5 rounded-2xl space-y-3 shadow-xl card-bg">
+                        <div class="flex justify-between border-b border-gray-800 pb-2">
+                            <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Name</span>
+                            <span class="font-bold section-title">${item.name}</span>
+                        </div>
+                        <div class="flex justify-between border-b border-gray-800 pb-2 text-sm">
+                            <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Contact</span>
+                            <span class="text-gray-400">${item.contact}</span>
+                        </div>
+                        <div class="border-b border-gray-800 pb-2 text-sm">
+                            <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest block mb-1">Email</span>
+                            <span class="text-[#3d7eff] break-all">${item.email}</span>
+                        </div>
+                        <div class="text-sm">
+                            <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest block mb-1">Message</span>
+                            <p class="text-gray-400 italic">"${item.message}"</p>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const newEntry = {
+                name: document.getElementById('name').value,
+                contact: document.getElementById('contact').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+            const existingEntries = JSON.parse(localStorage.getItem('user_msgs')) || [];
+            existingEntries.push(newEntry);
+            localStorage.setItem('user_msgs', JSON.stringify(existingEntries));
+            form.reset();
+            loadMessages();
+        });
+
+        function deleteAllRecords() {
+            if (confirm("Delete all records?")) {
+                localStorage.removeItem('user_msgs');
+                loadMessages();
+            }
+        }
+
+        window.onscroll = () => {
+            const btnTop = document.getElementById('backToTop');
+            if (window.scrollY > 400) btnTop.style.display = "flex";
+            else btnTop.style.display = "none";
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        loadMessages();
+    </script>
 </body>
 </html>
