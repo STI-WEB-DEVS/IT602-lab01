@@ -1,274 +1,39 @@
 /* ===== RESET ===== */
 
-* {
-
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
-}
- 
-/* ===== BODY + PAGE FADE ===== */
-
 body {
-
   background: radial-gradient(circle at top, #2a0d14, #050505);
-  color: #fff;
   min-height: 100vh;
-  opacity: 0;
-  animation: pageFade 1s ease forwards;
-
 }
 
- 
-
-@keyframes pageFade {
-  to { opacity: 1; }
-
-}
-
- 
-
-/* ===== NAVBAR ===== */
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 60px;
-  opacity: 0;
-  transform: translateY(-50px);
-  animation: navIn 1s ease forwards;
-
-}
-
- 
-
-@keyframes navIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-}
-
- 
-
-.logo {
-
-  color: #ff2b4a;
-  font-weight: bold;
-  font-size: 22px;
-
-}
-
- 
-
-nav a {
-
-  color: #fff;
-  margin-left: 25px;
-  text-decoration: none;
-  font-size: 14px;
-
-}
-
- 
-
-nav a:hover {
-
-  color: #ff2b4a;
-
-}
-
- 
-
-/* ===== HERO ===== */
-
-.hero {
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 80px 60px;
-
-}
-
- 
-
-/* HERO TEXT */
-
+/* Maintain your fade-in animations */
 .hero-text {
-
-  max-width: 500px;
-  opacity: 0;
-  transform: translateX(-60px);
   animation: textIn 1.2s ease forwards;
-  animation-delay: 0.5s;
-
 }
-
- 
-
-@keyframes textIn {
-
-  to {
-
-    opacity: 1;
-    transform: translateX(0);
-
-  }
-
-}
-
- 
-
-.intro {
-
-  color: #bbb;
-  margin-bottom: 10px;
-
-}
-
- 
-
-.hero-text h1 {
-  font-size: 42px;
-  line-height: 1.2;
-}
-
- 
-
-.hero-text h1 span {
-  color: #ff2b4a;
-}
-
- 
-
-.desc {
-
-  margin: 20px 0;
-  color: #ccc;
-  font-size: 15px;
-
-}
-
- 
-
-/* BUTTON */
-button {
-
-  background: #ff2b4a;
-
-  color: #fff;
-  border: none;
-  padding: 12px 25px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: 0.3s ease;
-
-}
-
-
-button:hover {
-  transform: scale(1.05);
-}
-
-
-/* HERO IMAGE */
 
 .hero-image {
-  width: 350px;
-  height: 350px;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 0 40px rgba(255,43,74,0.4);
-  opacity: 0;
-  transform: scale(0.7);
   animation: imageIn 1.4s ease forwards;
-  animation-delay: 0.8s;
-
 }
 
- 
+@keyframes textIn {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
 
 @keyframes imageIn {
-  to {
-    opacity: 1;
-    transform: scale(1);
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Table Responsive Fix for Small Screens */
+@media (max-width: 640px) {
+  table, thead, tbody, th, td, tr {
+      display: block;
   }
-
-}
-
- 
-
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
- 
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
+  thead { display: none; }
+  tr { margin-bottom: 1rem; border: 1px solid #333; }
+  td { padding-left: 50%; position: relative; }
+  td::before {
+      content: attr(data-label);
+      position: absolute; left: 10px; font-weight: bold; color: #ff2b4a;
   }
-
-  .hero-image {
-    margin-top: 40px;
-  }
-
-}
-* SOCIAL BUTTONS */
-
-.socials {
-  margin-top: 15px;
-  display: flex;
-  gap: 15px;
-
-}
-
- 
-
-.social-btn {
-
-  padding: 8px 18px;
-
-  border-radius: 5px;
-
-  text-decoration: none;
-
-  font-size: 14px;
-
-  color: #fff;
-  transition: 0.3s ease;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: socialIn 1s ease forwards;
-  animation-delay: 1s;
-
-}
-
- 
-
-@keyframes socialIn {
-
-  to {
-
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
- 
-
-/* Colors per platform */
-
-.social-btn.facebook { background: #1877F2; }
-.social-btn.tiktok { background: #010101; color: #fff; }
-/* Hover effect */
-.social-btn:hover {
-  transform: scale(1.1);
-
 }
