@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -15,4 +15,224 @@
 
 </html>
  
-<!--  This is just a test  -->
+This is just a test  -->
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <!-- Essential meta tags -->
+  <meta name="description" content="A clean and modern personal / portfolio / landing page"/>
+  <meta name="author" content="Your Name"/>
+  <meta name="robots" content="index, follow"/>
+  
+  <!-- Open Graph / Social sharing -->
+  <meta property="og:title" content="Beautiful Modern Landing Page"/>
+  <meta property="og:description" content="Clean design with smooth gradients and nice typography"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://your-site.com"/>
+  <meta property="og:image" content="https://your-site.com/preview.jpg"/>
+  
+  <!-- Favicon (replace with your own later) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>"/>
+  
+  <title>Modern Clean Landing Page</title>
+
+  <style>
+    :root {
+      --bg-start: #0f172a;
+      --bg-end: #1e293b;
+      --accent: #6366f1;
+      --accent-dark: #e54688;
+      --text: #e2e8f0;
+      --text-light: #94a3b8;
+      --card-bg: rgba(30, 41, 59, 0.65);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      min-height: 100vh;
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacOSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
+      background-attachment: fixed;
+    }
+
+    body {
+      background-image: 
+        radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.06) 0%, transparent 35%);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      padding: 80px 0 140px;
+      text-align: center;
+      position: relative;
+    }
+
+    h1 {
+      font-size: clamp(3.2rem, 8vw, 5.5rem);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      background: linear-gradient(90deg, #c084fc, #818cf8, #60a5fa);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 1rem;
+      line-height: 0.95;
+    }
+
+    .subtitle {
+      font-size: 1.4rem;
+      color: var(--text-light);
+      max-width: 580px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: white;
+      background: var(--accent);
+      border: none;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 25px rgba(99, 102, 241, 0.25);
+      margin: 0 12px 20px;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(99, 102, 241, 0.4);
+      background: var(--accent-dark);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--accent);
+      color: var(--accent);
+    }
+
+    .btn-outline:hover {
+      background: var(--accent);
+      color: white;
+    }
+
+    main {
+      padding-bottom: 120px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
+      margin: 80px 0;
+    }
+
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      border-radius: 16px;
+      padding: 32px 28px;
+      transition: all 0.35s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-12px);
+      border-color: rgba(99, 102, 241, 0.4);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .card h3 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 60px 0 100px;
+      color: var(--text-light);
+      font-size: 0.95rem;
+      border-top: 1px solid rgba(148, 163, 184, 0.12);
+    }
+
+    @media (max-width: 640px) {
+      header {
+        padding: 60px 0 100px;
+      }
+      h1 {
+        font-size: 3.8rem;
+      }
+      .btn {
+        padding: 12px 28px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <header>
+      <h1>Welcome to my Page!! My name is Leighh!</h1>
+      <p class="subtitle">
+        I'm 22 • i love playing valo • i love cats<br>
+        Learning never stops when you believe in yourself
+      </p>
+
+      <div>
+        <a href="#features" class="btn">Let's get started</a>
+        <a href="#" class="btn btn-outline">Learn More</a>
+      </div>
+    </header>
+
+    <main id="features">
+      <div class="card-grid">
+        <div class="card">
+          <h3>About me</h3>
+          <p>I'm Leighh from Davao City Philippines</p>
+        </div>
+        <div class="card">
+          <h3>About myself</h3>
+          <p> i love playing games especially valo and I really love cats.</p>
+        </div>
+        <div class="card">
+          <h3>My motivation qoute</h3>
+          <p>It's not about having a time it's about making time.</p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>Made with ♡ in 2026 • Feel free to use & modify</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
