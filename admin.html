@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Messages</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <header class="bg-gray-900 text-white py-4 px-8 shadow-md fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold tracking-tight">Admin View</h1>
+            <a href="index.html" class="text-sm bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-md transition">
+                Back to Portfolio
+            </a>
+        </div>
+    </header>
+
+    <main class="pt-28 pb-12 px-4">
+        <div class="max-w-6xl mx-auto">
+            
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+                <div>
+                    <h2 class="text-3xl font-extrabold text-gray-800">Messages</h2>
+                </div>
+                
+                <button onclick="clearMessages()" 
+                    class="bg-red-50 text-red-600 border border-red-200 px-6 py-2 rounded-lg hover:bg-red-600 hover:text-white transition-all font-medium">
+                    Clear All Messages
+                </button>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-gray-50 border-b border-gray-200">
+                                <th class="px-6 py-4 text-xs uppercase tracking-wider font-semibold text-gray-600">Date</th>
+                                <th class="px-6 py-4 text-xs uppercase tracking-wider font-semibold text-gray-600">Sender</th>
+                                <th class="px-6 py-4 text-xs uppercase tracking-wider font-semibold text-gray-600">Email Address</th>
+                                <th class="px-6 py-4 text-xs uppercase tracking-wider font-semibold text-gray-600">Message Content</th>
+                            </tr>
+                        </thead>
+                        <tbody id="messageTableBody" class="divide-y divide-gray-100">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="text-center py-10 text-gray-400 text-sm">
+        <p>&copy; 2026 BSIT602 Dashboard</p>
+    </footer>
+
+</body>
+</html>
