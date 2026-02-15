@@ -114,5 +114,31 @@
     to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
+@keyframes gradientXY {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.logo-minimized {
+    font-size: 24px !important; /* Make "J" slightly larger/more prominent */
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 900px) {
+    .logo-minimized {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+}
+
 
 

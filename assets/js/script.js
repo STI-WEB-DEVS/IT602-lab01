@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('JANIS SNE Hero loaded');
+    console.log('Joshua Arabejo Hero loaded');
     
     const scrollIndicator = document.querySelector('.scroll-indicator');
     if(scrollIndicator) {
@@ -33,21 +33,44 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+   
+    const heroSection = document.querySelector('.hero-section');
+    const brandLogo = document.querySelector('.brand-logo');
+    
+    if (heroSection && brandLogo) {
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    brandLogo.style.opacity = '0';
+                    brandLogo.style.visibility = 'hidden';
+                } else {
+                    brandLogo.style.opacity = '1';
+                    brandLogo.style.visibility = 'visible';
+                    brandLogo.textContent = 'Joshua Arabejo';
+                    brandLogo.classList.remove('logo-minimized');
+                }
+            });
+        }, { threshold: 0.1 }); 
+        
+        heroObserver.observe(heroSection);
+    }
+
+    
+    if (scrollIndicator) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                scrollIndicator.style.opacity = '0';
+                scrollIndicator.style.visibility = 'hidden';
+            } else {
+                scrollIndicator.style.opacity = '1';
+                scrollIndicator.style.visibility = 'visible';
+            }
+        });
+    }
 });
 
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            targetElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
         }
     });
 });
@@ -165,15 +188,11 @@ window.addEventListener('scroll', () => {
 });
 
 
-/* ==================================
-   CTA SECTION - SCROLL BEHAVIOR
-   ================================== */
 
 document.addEventListener('DOMContentLoaded', function() {
     const ctaSection = document.getElementById('cta-section');
     const scrollIndicator = document.querySelector('.scroll-indicator');
     
-    // Hide scroll indicator when CTA section is in view
     const ctaObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting && scrollIndicator) {
@@ -191,9 +210,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-/* ==================================
-   CTA FORM - VALIDATION & SUBMISSION
-   ================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('contact-form');
@@ -210,7 +226,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitBtn = form.querySelector('.submit-btn');
     const formStatus = document.getElementById('form-status');
     
-    // Validation Functions
     function validateName() {
         const value = nameInput.value.trim();
         if (value.length < 2) {
@@ -278,12 +293,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // Event Listeners - Validate on blur
     nameInput.addEventListener('blur', validateName);
     emailInput.addEventListener('blur', validateEmail);
     messageInput.addEventListener('blur', validateMessage);
     
-    // Clear validation on input
     nameInput.addEventListener('input', () => {
         if (nameInput.classList.contains('error') || nameInput.classList.contains('success')) {
             clearValidation(nameInput, nameError);
@@ -302,11 +315,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    // Form Submission
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
         
-        // Validate all fields
         const isNameValid = validateName();
         const isEmailValid = validateEmail();
         const isMessageValid = validateMessage();
@@ -316,17 +327,15 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         
-        // Show loading state
+       
         submitBtn.disabled = true;
         submitBtn.classList.add('loading');
         formStatus.textContent = '';
         formStatus.className = 'form-status';
         
         try {
-            // Simulate form submission (replace with actual API call)
             await new Promise(resolve => setTimeout(resolve, 2000));
             
-            // Success
             showFormStatus('✓ Message sent successfully! I\'ll get back to you soon.', 'success');
             form.reset();
             clearValidation(nameInput, nameError);
@@ -334,10 +343,9 @@ document.addEventListener('DOMContentLoaded', () => {
             clearValidation(messageInput, messageError);
             
         } catch (error) {
-            // Error
             showFormStatus('✗ Something went wrong. Please try again later.', 'error');
+
         } finally {
-            // Reset button state
             submitBtn.disabled = false;
             submitBtn.classList.remove('loading');
         }

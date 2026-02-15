@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth snap-y snap-mandatory h-screen overflow-y-scroll">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -98,7 +98,7 @@
             </div>
         </div>
 
-        <section class="hero-section w-full h-screen p-5 sticky top-0 z-0">
+        <section class="hero-section w-full h-screen p-5 relative z-10 block snap-start">
             <div class="hero-text-container absolute bottom-12 left-[74px] max-[300px]:bottom-[85px] max-[600px]:left-[30px] max-[600px]:bottom-[90px] min-[601px]:bottom-[95px] min-[901px]:bottom-[110px] z-10">
                 <p class="hero-subtitle font-['Space_Mono',monospace] text-base max-[600px]:text-sm max-[340px]:text-[10px] tracking-[0.1em] text-white mb-2.5 [text-shadow:0_2px_10px_rgba(0,0,0,0.8)]">BSIT 3RD YEAR • 2ND SEMESTER</p>
                 <h1 class="hero-title font-['Inter',sans-serif] text-[64px] max-[900px]:text-[48px] max-[600px]:text-[32px] max-[340px]:text-[22px] font-medium leading-[1.1] text-white flex flex-col [text-shadow:0_4px_20px_rgba(0,0,0,0.8)]">
@@ -124,6 +124,62 @@
 
 
 
+
+
+        <section id="about-section" class="w-full min-h-screen relative z-20 p-5 flex items-center justify-center snap-start">
+
+            <div class="absolute inset-5 bg-[linear-gradient(135deg,#0a0a0a_0%,#1c1c1c_25%,#0a0a0a_50%,#2d2d2d_75%,#0a0a0a_100%)] bg-[length:400%_400%] animate-gradient-xy rounded-[36px] overflow-hidden"></div>
+            
+            <div class="relative z-10 w-full max-w-[1400px] mx-auto px-6 py-8 md:py-20 flex flex-col justify-center">
+
+                <div class="flex justify-between items-start mb-2 md:mb-4 opacity-0 animate-[fadeInUp_1s_ease-out_forwards]">
+                    <h2 class="font-['Inter',sans-serif] text-[15vw] md:text-[13vw] leading-[0.8] font-medium tracking-tight text-[#d7d4d9]">
+                        MY STORY
+                    </h2>
+                </div>
+
+
+                <div class="flex flex-row flex-wrap md:flex-row justify-between items-center text-[9px] md:text-xs text-[#666] font-['Space_Mono',monospace] tracking-widest uppercase py-3 md:py-6 border-b border-white/10 mb-4 md:mb-12 gap-2 md:gap-4 shrink-0">
+                    <span>Joshua Wayman A. Arabejo</span>
+                    <span>Web Developer / UI/UX Designer</span>
+                    <span>Philippines</span>
+                </div>
+
+
+                <div class="grid md:grid-cols-2 gap-4 md:gap-24">
+
+                    <div class="flex flex-col justify-between gap-6 md:gap-0">
+                         <div class="space-y-4 md:space-y-8 text-[#a8a6ab] text-xs md:text-lg leading-relaxed font-light">
+                            <p>
+                                I am a Web Developer and UI/UX Designer who enjoys creating simple, useful, and good-looking websites and applications. I like turning ideas into real digital products that people can easily use and understand.
+                            </p>
+                            <p>
+                                For me, design and development are about solving problems. I focus on how users think and how they interact with a website. I plan the layout, choose the right colors, and design clean interfaces before building them with code. My goal is to make every project easy to use, fast, and visually clear.
+                            </p>
+                        </div>
+                        
+                        <div class="mt-6 md:mt-12">
+                             <a href="#cta-section" class="inline-flex items-center gap-3 px-5 py-3 md:px-6 md:py-4 bg-[#1a1a1a] hover:bg-[#2a2a2a] text-white text-[10px] md:text-xs font-['Space_Mono',monospace] tracking-widest uppercase transition-colors duration-300 rounded-sm group w-fit">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="group-hover:rotate-45 transition-transform duration-300">
+                                    <path d="M12 4V20M4 12H20" stroke="currentColor" stroke-width="1.5"/>
+                                </svg>
+                                Learn About My Services
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="space-y-4 md:space-y-8 text-[#a8a6ab] text-xs md:text-lg leading-relaxed font-light">
+                        <p>
+                            I believe that good design is a balance between function and appearance. A website should not only look good, but also work well. I use modern tools and technologies to build responsive and user-friendly systems. I always pay attention to details, from the layout and buttons to the performance and structure of the site.
+                        </p>
+                        <p>
+                            Through my projects, I aim to help individuals and businesses improve their online presence. Every project is a chance for me to learn, improve my skills, and create better digital experiences. I see every work as an opportunity to grow and build something meaningful for users.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 <section id="cta-section" class="w-full h-screen relative z-30 snap-start flex items-center justify-center p-5 overflow-hidden max-[480px]:p-4">
             <div class="cta-background absolute inset-5 rounded-[36px] overflow-hidden">
