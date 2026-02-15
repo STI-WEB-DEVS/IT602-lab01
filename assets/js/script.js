@@ -71,9 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-        }
-    });
-});
 
 
 const observerOptions = {
