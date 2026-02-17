@@ -11,45 +11,120 @@
             background: url('src/black.jpg') no-repeat center center fixed;
             background-size: cover;
         }
+       
     </style>
 </head>
 <body class="font-sans text-white">
 
     <header class="fixed top-0 left-0 w-full flex justify-between items-center px-8 md:px-16 py-5 bg-black/30 backdrop-blur-md z-[1000]">
         <h1 class="text-xl font-bold tracking-widest">JDEV</h1>
-        <nav class="hidden md:flex gap-8 text-sm tracking-widest">
-            <a href="#home" class="relative group">HOME
+        <nav id="mobile-menu" class="hidden md:flex gap-8 text-sm tracking-widest">
+            <a href="#home" class="mobile-link relative group">HOME
                 <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-white transition-all group-hover:w-full"></span>
             </a>
-            <a href="#about" class="relative group">ABOUT
+            <a href="#about" class="mobile-link relative group">ABOUT
                 <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-white transition-all group-hover:w-full"></span>
             </a>
-            <a href="#projects" class="relative group">PROJECTS
+            <a href="#projects" class="mobile-link relative group">PROJECTS
                 <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-white transition-all group-hover:w-full"></span>
             </a>
-            <a href="#contact" class="relative group">CONTACTS
+            <a href="#contact" class="mobile-link relative group">CONTACTS
                 <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-white transition-all group-hover:w-full"></span>
             </a>
         </nav>
+        <button id="menu-btn" class="md:hidden text-white p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
     </header>
 
-    <section id="home" class="min-h-screen flex flex-col md:flex-row justify-between items-center px-8 md:px-16 pt-32 pb-16">
+    <section id="home" class="relative min-h-screen flex flex-col justify-center items-center overflow-hidden">
         <div class="w-full md:w-1/2">
-            <h1 class="text-5xl md:text-7xl font-sans font-bold leading-tight">
-                UX/UI <br> DESIGN & <br> FULL-STACK <br> WEB DEVELOPER
+            <div class="relative z-10 text-center md:text-left flex flex-col items-center">
+        <p class="italic text-gray-400 text-lg mb-2 self-start md:ml-[-2rem]">Hi, I'm</p>
+                 <div class="flex flex-col">
+            <h1 class="text-[6rem] md:text-[8rem] font-black text-white leading-[0.8] tracking-tighter uppercase">
+                Jossua
             </h1>
+            <h1 class="text-[6rem] md:text-[8rem] font-black text-white leading-[0.8] tracking-tighter uppercase ml-20 md:ml-40">
+                Bongo
+            </h1>
+                  </div>
+             </div>
         </div>
 
-        <div class="w-full md:w-1/2 max-w-xl mt-12 md:mt-0">
-            <div class="space-y-4">
-                <h2 class="text-2xl font-semibold">Hi, I'm Jossua Bongo</h2>
-                <p class="text-base font-medium opacity-90">UX & UI design & Full-Stack Web Developer.</p>
-                <p class="text-sm leading-relaxed opacity-80">
-                    "A dedicated full-stack developer committed to engineering high-performance web solutions from the ground up. By bridging the gap between intuitive front-end aesthetics and robust back-end architecture, I ensure every application is as scalable as it is visually engaging."
-                </p>
+    </section>
+
+<section id="about" class="min-h-screen flex flex-col justify-start px-8 md:px-16 pt-40 pb-24">
+    <div class="max-w-4xl">
+        <h1 class="text-6xl md:text-9xl font-black tracking-tighter uppercase text-white mb-6">
+            About Me
+        </h1>
+        <div class="space-y-6 max-w-2xl">
+            <h2 class="text-2xl font-bold text-cyan-400">I'm a UX/UI Designer & Full-Stack Developer</h2>
+            <p class="text-sm md:text-base leading-relaxed text-gray-300">
+                I am a third-year BSIT student dedicated to building high-performance web applications that merge technical robustness with intuitive user experiences. My approach to technology is rooted in a desire to solve real-world problems through clean, efficient code and user-centered design. As an aspiring full-stack developer and UI/UX specialist, I am committed to continuous growth—constantly refining my skills in modern frameworks and design principles to create digital solutions that are as powerful as they are easy to navigate.
+            <div class="pt-8">
+                <p class="text-xs font-bold tracking-[0.2em] uppercase text-gray-500 mb-6">Tech Stack & Tools</p>
+                <div class="flex flex-wrap gap-8 items-center">
+                    <img src="src/git-svgrepo-com.svg" alt="Git" class="h-8 md:h-10 w-auto">
+                    <img src="src/python-svgrepo-com.svg" alt="Python" class="h-8 md:h-10 w-auto">
+                    <img src="src/javascript-svgrepo-com.svg" alt="JS" class="h-8 md:h-10 w-auto">
+                    <img src="src/tailwind-svgrepo-com.svg" alt="Tailwind" class="h-8 md:h-10 w-auto">
+                    <img src="src/mysql-svgrepo-com.svg" alt="MySQL" class="h-8 md:h-10 w-auto">
+                    <img src="src/figma-svgrepo-com.svg" alt="Figma" class="h-8 md:h-10 w-auto">
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+  
+<section id="projects" class="min-h-screen px-8 md:px-16 pt-32 pb-24">
+    <div class="max-w-7xl">
+        <h1 class="text-6xl md:text-9xl font-black tracking-tighter uppercase text-white mb-16">
+            Projects
+        </h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+            <div class="group relative bg-white/5 border border-white/10 p-8 rounded-lg hover:border-cyan-500 transition-colors duration-500">
+                <div class="flex flex-col h-full justify-between">
+                    <div>
+                        <span class="text-cyan-400 text-xs font-bold tracking-widest uppercase">UX/UI Design</span>
+                        <h3 class="text-3xl font-bold mt-4 mb-4">Hotel Reservation App</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-8">
+                            High-fidelity Figma prototype for hotel search results. Built upon a detailed UML class diagram for reservation logic.
+                        </p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="text-[10px] bg-white/10 px-3 py-1 rounded-full text-white uppercase">Figma</span>
+                        <span class="text-[10px] bg-white/10 px-3 py-1 rounded-full text-white uppercase">UX/UI</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group relative bg-white/5 border border-white/10 p-8 rounded-lg hover:border-cyan-500 transition-colors duration-500">
+                <div class="flex flex-col h-full justify-between">
+                    <div>
+                        <span class="text-cyan-400 text-xs font-bold tracking-widest uppercase">Web Development</span>
+                        <h3 class="text-3xl font-bold mt-4 mb-4">Google Homepage Clone</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-8">
+                            Frontend recreation using Tailwind CSS and HTML, focusing on layout centering and footer structure.
+                        </p>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="text-[10px] bg-white/10 px-3 py-1 rounded-full text-white uppercase">Tailwind CSS</span>
+                        <span class="text-[10px] bg-white/10 px-3 py-1 rounded-full text-white uppercase">HTML</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+    
+</section>
 
     <section id="contact" class="min-h-screen flex justify-center items-center px-8 pt-32">
         <div class="w-full max-w-xl text-center">
@@ -78,6 +153,34 @@
 
         </div>
     </section>
+
+<footer class="bg-black/50 backdrop-blur-md border-t border-white/10 py-12 px-8 md:px-16">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+        
+        <div class="text-center md:text-left">
+            <h2 class="text-2xl font-black tracking-[0.3em] uppercase text-white mb-2">JDEV</h2>
+            <p class="text-xs text-gray-500 tracking-widest uppercase">
+                &copy; 2026 Jossua Bongo. All rights reserved.
+            </p>
+        </div>
+
+        <div class="flex gap-8 items-center">
+            <a href="https://www.facebook.com/jossua2602" target="_blank" class="text-gray-400 hover:text-cyan-400 transition-colors duration-300">
+                <span class="text-xs font-bold tracking-widest uppercase">Facebook</span>
+            </a>
+            <a href="https://github.com/jossua2602" target="_blank" class="text-gray-400 hover:text-cyan-400 transition-colors duration-300">
+                <span class="text-xs font-bold tracking-widest uppercase">GitHub</span>
+            </a>
+        </div>
+
+        <a href="#home" class="group flex items-center gap-2 text-gray-500 hover:text-white transition-all duration-300">
+            <span class="text-[10px] font-bold tracking-widest uppercase">Back to Top</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 group-hover:-translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+            </svg>
+        </a>
+    </div>
+</footer>
 
     <script src="script.js"></script>
 </body>
