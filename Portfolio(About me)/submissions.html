@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Submissions | Khyle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: { poppins: ["Poppins", "sans-serif"] },
+            colors: { brand: "purple" },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body
+    class="bg-gray-50 text-gray-900 dark:bg-black dark:text-white font-poppins min-h-screen p-6 md:p-12 transition-colors duration-300"
+  >
+    <section class="max-w-7xl mx-auto">
+      <header
+        class="mb-10 flex flex-col md:flex-row justify-between items-center gap-4"
+      >
+        <h1 class="text-3xl font-bold tracking-tight text-center md:text-left">
+          MESSAGE <span class="text-brand">LOG</span>
+        </h1>
+
+        <div class="flex items-center gap-4">
+          <button
+            id="theme-toggle"
+            class="text-2xl text-gray-600 dark:text-white hover:text-brand transition-transform hover:rotate-180"
+          >
+            <i class="fa-solid fa-sun hidden dark:block"></i>
+            <i class="fa-solid fa-moon block dark:hidden"></i>
+          </button>
+
+          <a
+            href="main.html"
+            class="px-6 py-2 border border-transparent text-brand rounded-full hover:bg-brand hover:text-white dark:hover:text-black transition-all"
+          >
+            &larr; Back to Home
+          </a>
+        </div>
+      </header>
+
+      <div
+        class="bg-white dark:bg-[#111] border border-brand/30 rounded-xl shadow-[0_0_15px_rgba(128,0,128,0.1)] dark:shadow-[0_0_15px_rgba(128,0,128,0.2)] overflow-hidden transition-colors duration-300"
+      >
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse min-w-[800px]">
+            <thead>
+              <tr class="bg-brand/10 dark:bg-brand/20 border-b border-brand/30">
+                <th
+                  class="px-6 py-4 text-xs font-bold text-brand uppercase tracking-wider"
+                >
+                  Timestamp
+                </th>
+                <th
+                  class="px-6 py-4 text-xs font-bold text-brand uppercase tracking-wider"
+                >
+                  Name
+                </th>
+                <th
+                  class="px-6 py-4 text-xs font-bold text-brand uppercase tracking-wider"
+                >
+                  Contact No.
+                </th>
+                <th
+                  class="px-6 py-4 text-xs font-bold text-brand uppercase tracking-wider"
+                >
+                  Email
+                </th>
+                <th
+                  class="px-6 py-4 text-xs font-bold text-brand uppercase tracking-wider"
+                >
+                  Message
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              id="submissions-list"
+              class="divide-y divide-gray-200 dark:divide-gray-800"
+            ></tbody>
+          </table>
+        </div>
+
+        <div id="empty-state" class="hidden py-20 text-center">
+          <p class="text-gray-500 italic font-medium">
+            No messages received yet.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-6 text-right">
+        <button
+          onclick="clearStorage()"
+          class="text-red-500 text-sm hover:underline hover:text-red-400 transition-colors"
+        >
+          Clear All Messages
+        </button>
+      </div>
+    </section>
+
+    <script>
+      // Theme Toggle Logic
+      const themeToggle = document.getElementById("theme-toggle");
+      const html = document.documentElement;
+
+      // Apply theme immediately on load
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        html.classList.add("dark");
+      } else {
+        html.classList.remove("dark");
+      }
+
+      themeToggle.addEventListener("click", () => {
+        html.classList.toggle("dark");
+        localStorage.theme = html.classList.contains("dark") ? "dark" : "light";
+      });
+
+      // Submission View Logic
+      function viewSubmissions() {
+        const list = document.getElementById("submissions-list");
+        const data =
+          JSON.parse(localStorage.getItem("contact_submissions")) || [];
+
+        if (data.length === 0) {
+          const empty = document.getElementById("empty-state");
+          if (empty) empty.classList.remove("hidden");
+          return;
+        }
+
+        list.innerHTML = data
+          .reverse()
+          .map(
+            (entry) => `
+                <tr class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+                    <td class="px-6 py-4 text-xs font-mono text-gray-500 dark:text-gray-400 whitespace-nowrap">${entry.submittedAt}</td>
+                    <td class="px-6 py-4 font-bold text-gray-900 dark:text-white">${entry.name}</td>
+                    <td class="px-6 py-4 text-gray-600 dark:text-gray-300 font-mono">${entry.contact || "N/A"}</td>
+                    <td class="px-6 py-4 text-brand font-medium">${entry.email}</td>
+                    <td class="px-6 py-4 text-gray-700 dark:text-gray-300 min-w-[250px]">${entry.message}</td>
+                </tr>
+            `,
+          )
+          .join("");
+      }
+
+      function clearStorage() {
+        if (confirm("Are you sure you want to delete all messages?")) {
+          localStorage.removeItem("contact_submissions");
+          location.reload();
+        }
+      }
+
+      viewSubmissions();
+    </script>
+  </body>
+</html>

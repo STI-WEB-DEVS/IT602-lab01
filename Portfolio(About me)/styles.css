@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Base Scrollbar (Light Mode Default) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #c084fc; /* Lighter Purple */
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #a855f7;
+}
+
+/* Dark Mode Scrollbar Overrides */
+.dark ::-webkit-scrollbar-track {
+    background: #000;
+}
+.dark ::-webkit-scrollbar-thumb {
+    background: #800080;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #5a005a;
+}
