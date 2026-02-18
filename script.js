@@ -14,7 +14,7 @@
         loader.style.display = "none";
       }, 800);
 
-    }, 1000);
+    }, 8000);
   });
 
 
@@ -86,3 +86,4 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
 
     this.reset();
 });
+
