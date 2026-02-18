@@ -8,6 +8,427 @@ html {
   scroll-behavior: smooth;
 }
 
+#loader {
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+body {
+  padding-top: 80px;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+#theme-toggle i.fa-lightbulb {
+  color: gold;
+}
+
+#theme-toggle i.fa-moon {
+  color: #f0f0f0;
+}
+
+html.dark body {
+  background-color: #0f172a;
+  color: white;
+}
+
+html:not(.dark) body {
+  color: black;
+  background-color: #F0EDCC;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 1000;
+}
+
+html.dark nav {
+  background-color: darkblue;
+  color: yellow;
+}
+
+html:not(.dark) nav {
+  background-color: #02343F;
+  color: white;
+}
+
+nav a {
+  color: inherit;
+}
+
+.logo {
+  position: absolute;
+  top: 8px;
+  left: 50px;
+}
+
+.nav-links {
+  position: absolute;
+  top: 28px;
+  right: 50px;
+  display: flex;
+  gap: 36px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 18px;
+  opacity: 0.95;
+}
+
+html.dark .nav-links a {
+  color: white;
+}
+
+html:not(.dark) .nav-links a {
+  color: black;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+html.dark .hero {
+  background: #0f172a;
+}
+
+html:not(.dark) .hero {
+  background: white;
+}
+
+html.dark #home p {
+  color: lightblue;
+}
+
+html:not(.dark) #home p {
+  color: darkblue;
+}
+
+html.dark #home h2 {
+  color: yellow;
+}
+
+html:not(.dark) #home h2 {
+  color: red;
+}
+
+.animated-name {
+  font-family: 'Special Gothic Expanded One', sans-serif;
+  font-size: 5rem;
+  text-align: left;
+  
+  text-shadow:
+    0 0 5px #22d3ee,
+    0 0 10px #22d3ee,
+    0 0 20px #3b82f6,
+    0 0 40px #9333ea,
+    0 0 60px #ec4899;
+
+  animation: glowPulse 2s ease-in-out infinite alternate;
+}
+
+html.dark .animated-name {
+  color: white;
+}
+
+html:not(.dark) .animated-name {
+  color: black;
+}
+
+@keyframes glowPulse {
+  0% {
+    text-shadow:
+      0 0 5px #22d3ee,
+      0 0 10px #22d3ee,
+      0 0 20px #3b82f6,
+      0 0 40px #9333ea,
+      0 0 60px #ec4899;
+  }
+  100% {
+    text-shadow:
+      0 0 10px #22d3ee,
+      0 0 20px #22d3ee,
+      0 0 40px #3b82f6,
+      0 0 60px #9333ea,
+      0 0 100px #ec4899;
+  }
+}
+
+.about {
+  padding: 120px 60px;
+}
+
+html.dark .about {
+  background: #0f172a;
+  color: white;
+}
+
+html:not(.dark) .about {
+  background: white;
+  color: black;
+}
+
+.about-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.section-label {
+  font-size: 24px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+html.dark .section-label {
+  color: royalblue;
+}
+
+html:not(.dark) .section-label {
+  color: #1e40af;
+}
+
+.about h2 {
+  font-size: 30px;
+  margin: 12px 0 20px;
+  font-family: 'Anton', sans-serif;
+}
+
+.about-text {
+  max-width: 800px;
+  font-size: 24px;
+  line-height: 2;
+  opacity: 0.9;
+  margin-bottom: 60px;
+}
+
+@keyframes slide-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes slide-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-slide-right {
+  animation: slide-right 60s linear infinite;
+}
+
+.animate-slide-left {
+  animation: slide-left 60s linear infinite;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 6px;
+  color: gold;
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.group:hover .tooltip {
+  opacity: 1;
+}
+
+
+html.dark #projects h3{
+  color: yellow;
+}
+
+html:not(.dark) #projects h3 {
+  color: blue;
+}
+
+html.dark #projects p {
+  color: black;
+}
+
+html:not(.dark) #projects p {
+  color: white;
+}
+
+#contact {
+  padding: 120px 20px;
+  text-align: center;
+}
+
+#contact input,
+#contact textarea {
+  width: 100%;
+  padding: 16px 18px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid lightgray;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+html.dark #contact input,
+html.dark #contact textarea {
+  background-color: #1e293b;
+  color: white;
+  border-color: #334155;
+}
+
+html.dark #contact input:focus,
+html.dark #contact textarea:focus {
+  border-color: #22d3ee;
+  background-color: #0f172a;
+}
+
+html:not(.dark) #contact input,
+html:not(.dark) #contact textarea {
+  background-color: whitesmoke;
+  color: black;
+  border-color: gray;
+}
+
+html:not(.dark) #contact input:focus,
+html:not(.dark) #contact textarea:focus {
+  border-color: midnightblue;
+  background-color: white;
+}
+
+#contact button,
+#contact a {
+  width: 100%;
+  padding: 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+html.dark #contact button,
+html.dark #contact a {
+  background-color: #22d3ee;
+  color: black;
+}
+
+html.dark #contact button:hover,
+html.dark #contact a:hover {
+  background-color: #06b6d4;
+  color: white;
+}
+
+html:not(.dark) #contact button,
+html:not(.dark) #contact a {
+  background-color: white;
+  color: black;
+  border: 1px solid gray;
+}
+
+html:not(.dark) #contact button:hover,
+html:not(.dark) #contact a:hover {
+  background-color: navy;
+  color: white;
+}
+
+html.dark .footer {
+  color: whitesmoke;
+}
+
+html:not(.dark) .footer {
+  color: black;
+}
+
+
+.clip-hex {
+  clip-path: box(
+    25% 5%, 
+    75% 5%, 
+    100% 50%, 
+    75% 95%, 
+    25% 95%, 
+    0% 50%
+  );
+  border-radius: 20px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseSlow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 1s ease forwards;
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 3s ease-in-out infinite;
+}
+
+
+@media (max-width: 768px) {
+
+    .about {
+    padding: 80px 24px;
+  }
+}* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#loader {
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
 body {
   padding-top: 80px;
   font-family: 'Playfair Display', Georgia, serif;
