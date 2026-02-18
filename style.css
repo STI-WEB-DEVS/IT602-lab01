@@ -101,23 +101,19 @@ html:not(.dark) .hero {
 }
 
 html.dark #home p {
-  background-color: #0f172a;
   color: lightblue;
 }
 
 html:not(.dark) #home p {
   color: darkblue;
-  background-color: #F0EDCC;
 }
 
 html.dark #home h2 {
-  background-color: #0f172a;
   color: yellow;
 }
 
 html:not(.dark) #home h2 {
   color: red;
-  background-color: #F0EDCC;
 }
 
 .animated-name {
@@ -343,13 +339,11 @@ html:not(.dark) #contact a:hover {
 }
 
 html.dark .footer {
-  background-color: #0f172a;
   color: whitesmoke;
 }
 
 html:not(.dark) .footer {
   color: black;
-  background-color: #F0EDCC;
 }
 
 
