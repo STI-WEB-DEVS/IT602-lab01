@@ -5,12 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JB De Vila</title>
   <link rel="icon" href="favicon-jb.png" />
+  <link rel="stylesheet" href="style.css">
+  <script> tailwind.config = {darkMode: 'class'} </script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
 </head>
+<body class="w-full p-4 rounded-md text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-colors duration-300">
 
-<body class="pt-20 font-serif text-white bg-[midnightblue] scroll-smooth">
+  <div id="loader" class="fixed inset-0 bg-white flex items-center justify-center z-50 opacity-0">
+    <img 
+      src="https://cdn.dribbble.com/userupload/21493307/file/original-64894a7c31cfc91668ad7e7f5c298218.gif" 
+      alt="Loading..."
+      class="w-64 md:w-80"
+    />
+  </div>
+  
 
-<nav class="fixed top-0 left-0 w-full h-20 bg-[#1b1f6b] z-50">
+  <!-- Navigation -->
+<nav class="fixed top-0 left-0 w-full h-20 text-black dark:text-white z-50 transition-colors duration-500">
   <div class="relative h-full max-w-full">
 
     <img
@@ -19,85 +33,99 @@
       alt="JB Logo"
     />
 
-    <div class="absolute right-12 top-7 flex gap-10 text-white text-lg">
-      <a href="#home" class="hover:underline">Home</a>
-      <a href="#about" class="hover:underline">About</a>
-      <a href="#contact" class="hover:underline">Contact</a>
+    <div class="absolute right-12 top-7 flex gap-10 items-center text-lg">
+      <a href="#home" class="relative cursor-pointer
+          before:content-[''] before:absolute before:-bottom-1 before:left-0 before:w-full before:h-[2px]
+          before:bg-cyan-400 before:scale-x-0 before:origin-left before:transition-transform before:duration-300
+          hover:before:scale-x-100">
+        Home
+      </a>
+      <a href="#about" class="relative cursor-pointer
+          before:content-[''] before:absolute before:-bottom-1 before:left-0 before:w-full before:h-[2px]
+          before:bg-cyan-400 before:scale-x-0 before:origin-left before:transition-transform before:duration-300
+          hover:before:scale-x-100">
+        About
+      </a>
+
+      <a href="#projects" class="relative cursor-pointer
+          before:content-[''] before:absolute before:-bottom-1 before:left-0 before:w-full before:h-[2px]
+          before:bg-cyan-400 before:scale-x-0 before:origin-left before:transition-transform before:duration-300
+          hover:before:scale-x-100">
+        Projects
+      </a>
+
+      <a href="#contact" class="relative cursor-pointer
+          before:content-[''] before:absolute before:-bottom-1 before:left-0 before:w-full before:h-[2px]
+          before:bg-cyan-400 before:scale-x-0 before:origin-left before:transition-transform before:duration-300
+          hover:before:scale-x-100">
+        Contact
+      </a>
+
+      <button id="theme-toggle" class="text-2xl">
+        <i class="fas fa-moon"></i>
+      </button>
     </div>
 
   </div>
 </nav>
 
+<!-- Home -->
+<section id="home" class="min-h-screen flex items-center justify-center">
+  
+  <div class="max-w-7xl w-full grid md:grid-cols-2 gap-12 items-center">
 
-<section
-  id="home"
-  class="relative pt-20 min-h-screen bg-cover bg-center"
-  style="background-image:
-    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-    url('https://e0.pxfuel.com/wallpapers/475/184/desktop-wallpaper-portfolio-background-portfolio-background-portfolio-and-career-portfolio.jpg');"
->
+    <div class="text-white space-y-6 text-center md:text-left">
+      <p class="text-xl md:text-2xl">
+        Hello, It's Me
+      </p>
 
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight animated-name">
+          JB De Vila
+      </h1>
 
-  <p class="absolute top-[120px] left-[210px] text-white text-5xl hidden md:block">
-    Hi! I'm
-  </p>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold text-yellow-400">
+        I’m an aspiring <br> Full Stack Developer
+      </h2>
 
-  <div
-    class="absolute top-[150px] left-[380px]
-           text-[200px] font-bold text-blue-500 leading-none
-           hidden md:block">
-    JB
+      <p class="text-gray-400 text-md md:text-xl max-w-xxl mx-auto md:mx-0">
+        Focused on learning and building modern web applications. I enjoy working on both the front-end and back-end, and I’m constantly improving my skills through hands-on projects and continuous learning.
+      </p>
+
+      <div class="flex justify-center md:justify-start">
+       <a href="#contact"
+        class="inline-block px-6 py-3 bg-cyan-500  transition rounded-full font-semibold">
+        Contact Me
+       </a>
+
+        </button>
+      </div>
+    </div>
+
+    <div class="flex justify-center">
+  <div class="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 group">
+    <div class="absolute inset-0 rounded-full bg-cyan-500 opacity-0 blur-2xl transition duration-500 group-hover:opacity-40"></div>
+    <div class="relative w-full h-full clip-hex overflow-hidden border-4 border-cyan-400 transition duration-500 group-hover:shadow-[0_0_40px_#22d3ee]">
+
+      <img src="https://static.vecteezy.com/system/resources/previews/047/628/836/non_2x/coding-symbol-mark-in-filled-style-vector.jpg"
+           class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+           alt="Profile">
+    </div>
+
   </div>
-
-  <div
-    class="absolute top-[320px] left-[650px]
-           text-[170px] font-bold text-blue-500 leading-none
-           hidden md:block">
-    DE VILA
-  </div>
-
-  <div
-    class="absolute top-[430px] left-[60px]
-           text-[80px] text-blue-600 hidden md:block">
-    Full Stack
-  </div>
-
-  <div
-    class="absolute top-[500px] left-[60px]
-           text-[80px] text-yellow-400 hidden md:block">
-    Developer
-  </div>
-
-  <p
-    class="absolute top-[600px] left-[60px] max-w-xl
-           text-lg tracking-widest text-white/50 hidden md:block">
-    A Full Stack Web Developer is a comprehensive architect who designs the
-    interactive user interface and constructs the server-side infrastructure
-    and databases required.
-  </p>
-
-  <div class="md:hidden px-6 pt-24 text-white">
-    <p class="text-3xl mb-4">Hi! I'm</p>
-    <h1 class="text-6xl font-bold text-blue-400 leading-tight">JB</h1>
-    <h2 class="text-5xl font-bold text-blue-400 mb-6">DE VILA</h2>
-
-    <p class="text-3xl text-blue-300">Full Stack</p>
-    <p class="text-3xl text-yellow-400 mb-6">Developer</p>
-
-    <p class="text-sm text-white/60">
-      A Full Stack Web Developer is a comprehensive architect who designs the
-      interactive user interface and constructs the server-side infrastructure
-      and databases required.
-    </p>
-  </div>
-
+</div>
 </section>
 
 
-<section id="about" class="bg-white text-[midnightblue] px-6 md:px-16 py-20 scroll-mt-20">
+<!-- About -->
+<section id="about" class="px-6 md:px-16 py-20 scroll-mt-20">
   <div class="max-w-5xl mx-auto">
 
-    <span class="text-2xl tracking-widest uppercase text-blue-600">
+    <span
+      class="text-2xl tracking-widest uppercase text-blue-500 relative inline-block cursor-pointer
+            before:content-[''] before:absolute before:-bottom-1 before:left-0 before:w-full before:h-1
+            before:bg-blue-400 before:scale-x-0 before:origin-left before:transition-transform before:duration-300
+            hover:before:scale-x-100 animate-fade-in"
+    >
       About
     </span>
 
@@ -112,55 +140,216 @@
       I’m always eager to learn new tools and improve my craft with every project.
     </p>
 
-    <div class="flex flex-wrap gap-10 mb-12 items-center">
-      <img class="w-14 h-14 hover:scale-110 transition" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg">
-      <img class="w-14 h-14 hover:scale-110 transition" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg">
-      <img class="w-14 h-14 hover:scale-110 transition" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">
-      <img class="w-14 h-14 hover:scale-110 transition" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">
-      <img class="w-14 h-14 hover:scale-110 transition" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg">
-      <img class="w-14 h-14 hover:scale-110 transition" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg">
-      <img class="w-14 h-14 hover:scale-110 transition" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg">
-    </div>
+ <div class="flex flex-wrap gap-10 mb-12 items-center justify-center">
+  <div class="overflow-hidden w-full">
+    <div class="flex gap-10 w-max animate-slide-right py-10">
 
-    <div class="flex flex-wrap gap-10 items-center">
-      <img class="w-14 h-14 hover:scale-110 transition" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg">
-      <img class="w-14 h-14 hover:scale-110 transition" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg">
-      <img class="w-14 h-14 hover:scale-110 transition" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg">
-      <img class="w-14 h-14 hover:scale-110 transition" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg">
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"><span class="tooltip">HTML5</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"><span class="tooltip">CSS3</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"><span class="tooltip">JavaScript</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"><span class="tooltip">TypeScript</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"><span class="tooltip">Python</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"><span class="tooltip">PHP</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"><span class="tooltip">Java</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"><span class="tooltip">C#</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"><span class="tooltip">C++</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg"><span class="tooltip">Laravel</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"><span class="tooltip">React</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"><span class="tooltip">NodeJS</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"><span class="tooltip">Tailwind</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"><span class="tooltip">Bootstrap</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"><span class="tooltip">Express</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"><span class="tooltip">Next.js</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"><span class="tooltip">MongoDB</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"><span class="tooltip">Firebase</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"><span class="tooltip">Angular</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg"><span class="tooltip">Go</span></div>
     </div>
+  </div>
+</div>
+
+ <div class="flex flex-wrap gap-10 mb-12 items-center justify-center">
+  <div class="overflow-hidden w-full">
+    <div class="flex gap-10 w-max animate-slide-left py-10">
+
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"><span class="tooltip">Git</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"><span class="tooltip">GitHub</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"><span class="tooltip">Docker</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"><span class="tooltip">VS Code</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg"><span class="tooltip">IntelliJ</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"><span class="tooltip">MySQL</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"><span class="tooltip">PostgreSQL</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"><span class="tooltip">Figma</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg"><span class="tooltip">Photoshop</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"><span class="tooltip">Linux</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg"><span class="tooltip">Bash</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg"><span class="tooltip">Postman</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"><span class="tooltip">AWS</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg"><span class="tooltip">Vite</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg"><span class="tooltip">npm</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg"><span class="tooltip">Redis</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg"><span class="tooltip">Kubernetes</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg"><span class="tooltip">Jira</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg"><span class="tooltip">GitLab</span></div>
+      <div class="relative group"><img class="w-14 h-14 hover:scale-110 transition duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain.svg"><span class="tooltip">Ubuntu</span></div>
+    </div>
+  </div>
+</div>
 
   </div>
 </section>
 
-<section id="contact" class="bg-white text-[midnightblue] min-h-screen flex justify-center items-center px-8 pt-32">
-  <div class="w-full max-w-xl text-center">
-      <h2 class="text-4xl font-bold mb-8 tracking-wide">Contact Me</h2>
+
+  <!-- Projects -->
+<section id="projects" class="min-h-screen flex justify-center items-center px-6 md:px-16 py-20 scroll-mt-20">
+
+  <div class="relative max-w-7xl mx-auto px-6 md:px-16">
+    <h2
+      class="text-3xl font-bold mb-12 text-center cursor-default
+            transition-shadow duration-300 hover:shadow-[0_0_10px_#3b82f6]"
+    >
+      Projects
+    </h2>
+
+
+    <div class="grid md:grid-cols-2 gap-12 items-stretch">
+
+      <div class="rounded-2xl p-8 flex flex-col justify-between hover:scale-105 hover:shadow-2xl transition-all duration-300"
+           style="background: linear-gradient(135deg, #10B981 0%, #3B82F6 100%);">
+        <h3 class="text-2xl font-semibold mb-4">Basic Inventory Manager</h3>
+        <p class="mb-6">
+          A simple desktop app to manage your store’s inventory, track stock, and generate reports efficiently.
+        </p>
+        <p class="font-medium">Languages used: Python, SQLite, Tkinter</p>
+      </div>
+
+      <div class="rounded-2xl p-8 flex flex-col justify-between hover:scale-105 hover:shadow-2xl transition-all duration-300"
+           style="background: linear-gradient(135deg, #10B981 0%, #3B82F6 100%);">
+        <h3 class="text-2xl font-semibold mb-4">Personal Budget Tracker</h3>
+        <p class="mb-6">
+          A user-friendly web app to track expenses and incomes, helping users manage their personal finances better.
+        </p>
+        <p class="font-medium">Languages used: JavaScript, HTML, CSS</p>
+      </div>
+
+      <div class="rounded-2xl p-8 flex flex-col justify-between hover:scale-105 hover:shadow-2xl transition-all duration-300"
+           style="background: linear-gradient(135deg, #10B981 0%, #3B82F6 100%);">
+        <h3 class="text-2xl font-semibold mb-4">Calculator</h3>
+        <p class="mb-6">
+          A simple calculator app that performs basic arithmetic operations like addition, subtraction, multiplication, and division.
+        </p>
+        <p class="font-medium">Languages used: JavaScript, HTML, CSS</p>
+      </div>
       
-      <form id="contact-form" class="flex flex-col gap-5">
-        <input type="text" name="name1" placeholder="Your Name" required 
-            class="w-full p-4 rounded-md bg-whitesmoke text-black focus:outline-none focus:ring-2 focus:ring-cyan-500">
-        
-        <input type="email" name="email1" placeholder="Your Email" required 
-            class="w-full p-4 rounded-md bg-whitesmoke text-black focus:outline-none focus:ring-2 focus:ring-cyan-500">
-        
-        <textarea name="message1" placeholder="Your Message" rows="6" required 
-            class="w-full p-4 rounded-md bg-whitesmoke text-black focus:outline-none focus:ring-2 focus:ring-cyan-500"></textarea>
-        
-      <button type="submit" 
-        class="w-full p-4 bg-white text-black font-bold tracking-widest hover:bg-cyan-500 hover:text-white transition-colors duration-300 rounded-md">
-        SEND MESSAGE
-      </button>
+    </div>
+  </div>
+</section>
 
-      <a href="sub.html" 
-         class="w-full p-4 bg-white text-black text-center uppercase font-bold tracking-widest hover:bg-cyan-500 hover:text-white transition-colors duration-300 rounded-md block">
-         View Submissions
-      </a>
 
+ <!-- Contact -->
+<section id="contact" class="min-h-screen flex justify-center items-center px-8 pt-32">
+  <div class="w-full max-w-xl text-center">
+    <h2
+      class="text-4xl font-bold mb-8 tracking-wide
+             drop-shadow-[0_0_5px_rgba(6,182,212,0.7)]
+             drop-shadow-[0_0_10px_rgba(6,182,212,0.8)]
+             hover:drop-shadow-[0_0_20px_rgba(6,182,212,1)]
+             transition-shadow duration-300 cursor-default">
+      Contact Me
+    </h2> 
+
+    <form id="contact-form" class="flex flex-col gap-5">
+      <input type="text" name="name1" placeholder="Your Name" required>
+      <input type="email" name="email1" placeholder="Your Email" required>
+      <textarea name="message1" placeholder="Your Message" rows="6" required></textarea>
+      
+      <button type="submit">SEND MESSAGE</button>
+
+      <a href="sub.html">View Submissions</a>
     </form>
   </div>
 </section>
 
-<script src="script.js"></script>
 
+
+  <!-- Footer -->
+<footer class="text-xl pt-16 pb-8 px-6">
+
+  <div class="footer max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
+
+    <div>
+      <h3 class="text-2xl font-bold  mb-4">JB De Vila</h3>
+      <p class="leading-relaxed">
+        Aspiring Full Stack Developer passionate about building modern,
+        scalable, and user-friendly web applications.
+      </p>
+    </div>
+
+    <div>
+      <h4 class="text-xl font-semibold mb-4">Quick Links</h4>
+      <ul class="space-y-3">
+        <li><a href="#home" class="hover:text-xl transition">Home</a></li>
+        <li><a href="#about" class="hover:text-xl transition">About</a></li>
+        <li><a href="#projects" class="hover:text-xl transition">Projects</a></li>
+        <li><a href="#contact" class="hover:text-xl transition">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-xl font-semibold mb-4">Connect With Me</h4>
+
+      <div class="flex gap-6 text-2xl mb-6">
+
+        <a href="https://linkedin.com/in/yourprofile" target="_blank"
+           class="hover:text-cyan-400 transition">
+          <i class="fab fa-linkedin"></i>
+        </a>
+
+        <a href="https://facebook.com/yourprofile" target="_blank"
+           class="hover:text-cyan-400 transition">
+          <i class="fab fa-facebook"></i>
+        </a>
+
+        <a href="https://github.com/yourusername" target="_blank"
+           class="hover:text-cyan-400 transition">
+          <i class="fab fa-github"></i>
+        </a>
+
+        <a href="https://instagram.com/yourusername" target="_blank"
+           class="hover:text-cyan-400 transition">
+          <i class="fab fa-instagram"></i>
+        </a>
+
+      </div>
+
+      <div class="space-y-3 text-sm">
+
+        <p>
+          <i class="fas fa-envelope mr-2"></i>
+          devila.jb@gmail.com
+        </p>
+
+        <p>
+          <i class="fas fa-phone mr-2"></i>
+          +63 9088184444
+        </p>
+
+        <p>
+          <i class="fas fa-location mr-2"></i>
+          Davao City, Philippines
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="border-t border-gray-700 mt-12 pt-6 text-center text-sm">
+    © 2026 JB De Vila. All Rights Reserved.
+  </div>
+
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
