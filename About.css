@@ -1,11 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-
 .about {
 
     height: 100vh;
     display: flex;
-    justify-content: start;
     flex-direction: row;
 }
 
@@ -13,297 +11,336 @@
 .hero-information {
 
     display: flex;
+    height: 100%;
     width: 300px;
-    margin-left: 10px;
     flex-direction: column;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 25px;
 }
 
 
-.hero-details {
+.Hero-Profile {
 
+    height: 300px;
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    height: 250px;
-    padding-top: 50px;
-}
-
-
-.hero-picture {
-
-    display: flex;
-    height: 117px;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
 
-.card {
+.profile-border {
 
-    width: 110px;
-    height: 110px;
     border: 1px solid black;
+    height: 120px;
+    width: 120px;
+    background-color: #fff;
     border-radius: 50%;
-    margin-top: 25px;
     overflow: hidden;
 }
 
 
-.card img {
+.profile-border img {
 
     height: 100%;
     width: 100%;
 }
 
 
-.child {
-
-    display: flex;
-    align-items: end;
-    justify-content: center;
-    height: 50px;
-    width: 80px;
-}
-
-
-.hero-info {
-
-    height: 126px;
-    display: flex;
-    align-items: start;
-    justify-content: center;
-    padding-top: 20px;
-}
-
-
-.hero-info h3 {
-    
-    text-align: center;
-    line-height: 1.9;
-    color: #fff;
-}
-
-
-.identity {
-
-    height: 120px;
-}
-
-
-.City,
-.Country,
-.Age {
-
-    padding-top: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-right: 20px;
-    padding-left: 20px;
-    color: #fff;
-}
-
-
-.Skills {
-
-    height: 350px;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    flex-direction: column;
-}
-
-
-.title {
-    
-    margin-top: 10px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.prog-icon {
-
-    width: 90%;
-    height: 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-
-.prog-icon img {
-
-    width: 40px;
-}
-
-
-.Feauture {
-
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    flex: 1;
-    padding-top: 30px;
-}
-
-
-.Feature-System {
-    
-    height: 300px;
-    width: 80%;
-    display: flex;
-    align-items: center;
-    padding-left: 50px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 50px;
-}
-
-
-.Feature-System h1 {
-
-    color: #fff;
-    font-size: 2.3rem;
-}
-
-
-.hero-border {
-    
-    padding-left: 100px;
-    height: 330px;
-    position: relative;
-    z-index: 2;
-    padding-bottom: 50px;
-}
-
-
-.hero-border img {
-
-    display: block;    
-    position: relative;
-    height: 100%;
-}
-
-
-.Text-Feature {
-
-    max-width: 462px;
-}
-
-
-.contact-btn {
+.hero-name {
 
     margin-top: 20px;
-    padding: 10px 40px;
-    cursor: pointer;
-    background-color: transparent;
-    border-color: rgb(79, 195, 247);;;
-    color: #ffffff;
-    font-size: 17px;
-    font-weight: 600;
-    border-radius: 4px;
+    text-align: center;
 }
 
 
-.Experience {
+.hero-name h2 {
+
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+}
+
+
+.hero-more-information {
     
+    height: 200px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+
+.info-item {
+
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+}
+
+.label {
+
+    width: 160px;      
+    font-weight: 500;
+    color: #fff;
+}
+
+.value {
+
+    font-weight: 400;
+    color: #fff;
+}
+
+
+.skills-section {
+
+    margin-top: 20px;
+    display: grid;
+    justify-content: center;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 10px;
+    flex: 1;
+}
+
+
+.section-header {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+
+.programming-icon {
+
+    display: flex;
+    justify-content: space-around;
+    gap: 50px;
+}
+
+
+.programming-icon img {
+
+    width: 50px;
     height: 50px;
+}
+
+
+.hero-Featured {
+
+    display: flex;
+    flex: 1;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.Featured-Content {
+
+    margin-top: 80px;
+    height: 250px;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-image: url(resource/3-34208_m.jpg);
+    background-position: left;
+}
+
+
+.featured-headline {
+
+    display: flex;
+    justify-content: center;
+    padding-left: 50px;
+    flex-direction: column;
+}
+
+
+.featured-headline h1 {
+
+    font-size: 32px;
+    color: #fff;
+}
+
+
+.button-division {
+
+    margin-top: 15px;
+}
+
+
+.btn-contact {
+
+    padding: 10px 5px;
+    font-weight: 500;
+    font-size: 14px;
+    background-color: rgb(79, 195, 247);
+    border: none;
+    border-radius: 2px;
+    color: #0e0e0e;
+}
+
+
+.hero-figure-wrapper {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+.hero-image {
+
+    width: 400px;
+    height: 250px;
+    position: relative;
+    z-index: 2;
+}
+
+
+.hero-image img {
+
+    height: 100%;
+    width: 100%;
+}
+
+
+.hero-stats {
+
     width: 80%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding-left: 50px;
+    justify-content: center;
+    margin: 20px 0;
+     box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 25px;
 }
 
 
-.Awards h1{
+.hero-stats ul {
 
-    padding-right: 20px;
+    list-style: none;
 }
 
 
-.Exp h1,
-.Awards h1,
-.Complete h1,
-.Satisfaction h1 {
+.hero-stats li {
 
-    font-size: 17px;
+    display: inline-block;
+    margin: 0 70px;
+    color: #fff;
+    font-weight: 400;
 }
 
 
 .Services {
 
-    height: 400px;
+    display: flex;
+    flex: 1;
     width: 80%;
-    padding-left: 50px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.Sample {
+    
+    height: 240px;
+    max-width: 300px;
     display: flex;
     justify-content: start;
-    align-items: start;
     flex-direction: column;
-     box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 25px;
-}
-
-
-.section-title {
-
-    height: 50px;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    margin-top: 12px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 25px;
 }
 
 
-.section-title h2 {
+.Sample p {
+
+    font-size: 13px;
+    text-align: justify;
+    padding: 15px 10px;
+    color: #fff;
+}
+
+
+.Sample h2 {
 
     color: #fff;
 }
 
 
-.Container {
+@media (max-width: 768px) {
 
-    display: flex;
-    flex: 1;
-    flex-direction: row;
-    padding-left: 10px;
-}
-
-
-.web-dev {
-
-    margin-top: 50px;
-    height: 250px;
-    width: 300px;
-    display: grid;
-    grid-template-rows: 50px 1fr 50px;
-    margin-left: 10px;
-    box-shadow: rgba(2, 2, 2, 0.2) 0px 10px 25px;
-}
+    .about {
+        padding-top: 200px;
+        flex-direction: column;
+        height: auto;
+    }
 
 
-.web-development-title {
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.service-card__description {
-
-    max-width: 500px;
-    text-align: justify;
-    display: flex;
-    align-items: center;
-    padding: 0px 10px;
-}
+    .hero-information {
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+    }
 
 
-.service-card__actions {
+    .hero-Featured {
+        width: 100%;
+        height: auto;
+        padding: 20px 0;
+    }
 
-    display: flex;
-    justify-content: center;
+  
+    .Featured-Content {
+        grid-template-columns: 1fr;
+        height: auto;
+        text-align: center;
+        background-position: center;
+    }
+
+    .featured-headline {
+        padding-left: 0;
+        align-items: center;
+    }
+
+
+    .hero-image {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    .hero-image img {
+        object-fit: cover;
+    }
+
+
+    .hero-stats ul {
+        padding: 0;
+        text-align: center;
+    }
+
+    .hero-stats li {
+        display: block;
+        margin: 10px 0;
+    }
+
+
+    .Services {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .Sample {
+        width: 90%;
+        max-width: none;
+    }
+
+    .programming-icon {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
 }
