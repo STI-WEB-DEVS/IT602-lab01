@@ -231,7 +231,7 @@
              
             <div class="Form">
                 <div class="Form-Cotainer">
-                    <form action="">
+                    <form action="" id="contact-form">
 
                         <div class="input-fields">
                             <h1>Get in Touch <br>
@@ -240,23 +240,23 @@
                         
                         <div class="Name">
                             <div class="simp">
-                                <input type="text" placeholder="Firstname">
-                                <input type="text" placeholder="Lastname">
+                                <input type="text" placeholder="Firstname" name="name">
+                                <input type="text" placeholder="Lastname" name="name">
                             </div>
                             <div class="Email">
-                                <input type="email" placeholder="Email">
+                                <input type="email" placeholder="Email" name="email">
                             </div>
                             <div class="Numbers">
                                 <select name="" id="">
                                     <Option>+63</Option>
                                 </select>
-                                <input type="text" placeholder="Phone number">
+                                <input type="text" placeholder="Phone number" name="number">
                             </div>
                         </div>
 
                         <div class="Suggestion">
                             <div>
-                                <textarea name="" id="" cols="4" placeholder="Message"></textarea>
+                                <textarea id="message" cols="4" placeholder="Message" name="Message"></textarea>
                             </div>
                             <div class="button-container">
                                 <button>Submit</button>
@@ -268,6 +268,8 @@
             </div>
         </div>
     </section>
+
+    <script src="Contact.js"></script>
 
 </body>
 </html>

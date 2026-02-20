@@ -54,10 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const data = JSON.parse(localStorage.getItem('contact_submit')) || [];
 
-         container.innerHTML = "";
 
         if(data.length === 0) {
-            container.innerHTML = "<p>No submissions yet.</p>";
+
             return;
         }
 
@@ -68,11 +67,11 @@ document.addEventListener('DOMContentLoaded', () => {
         row.innerHTML = `
             <td>${item.name}</td>
             <td>${item.email}</td>
-            <td>${item.message}</td>
+            <td>${item.number}</td>
+            <td>${item.Message}</td>
             <td>${item.submittedAt}</td>
         `;
 
-        document.getElementById("submissions").appendChild(row);
     });
 
 
@@ -94,7 +93,8 @@ function viewSubmitted() {
         <tr>
             <td>${entry.name || 'N/A'}</td>
             <td>${entry.email || 'N/A'}</td>
-            <td>${entry.message || 'N/A'}</td>
+            <td>${entry.number || 'N/A'}</td>
+            <td>${entry.Message || 'N/A'}</td>
             <td>${entry.submittedAt}</td>
         </tr>
     `).join('');
