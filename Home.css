@@ -87,6 +87,19 @@
     margin-right: 20px;
     border: none;
     cursor: pointer;
+    transition: opacity 1s;
+}
+
+
+.Hire-ME:hover {
+
+    opacity: 0.6;
+}
+
+
+.Hire-ME:active {
+
+    opacity: 0.3;
 }
 
 
@@ -100,6 +113,19 @@
     font-weight: 500;
     border-color: rgb(79, 195, 247);;
     cursor: pointer;
+    transition: opacity 1s;
+}
+
+
+.Lets-talk:hover {
+
+    opacity: 0.6;
+}
+
+
+.Lets-talk:active {
+
+    opacity: 0.3;
 }
 
 

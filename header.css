@@ -29,9 +29,34 @@
 
 .navbar a {
 
+    position: relative;
     color: #fff;
     text-decoration: none;
     font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: rgb(79, 195, 247);
+    transition: width 0.3s ease;
+}
+
+
+.navbar a:hover {
+
+    color: rgb(79, 195, 247);
+}
+
+.navbar a:hover::after {
+
+    width: 100%;
 }
 
 
