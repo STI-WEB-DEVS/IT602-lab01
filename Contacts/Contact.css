@@ -142,23 +142,23 @@
     font-size: 15px;
     padding: 0px 15px;
     font-family: "Poppins", sans-serif;
-    /* opacity: 0;
+    opacity: 0;
     transition: 800ms ease;
-    transition-delay: 300ms; */
+    transition-delay: 300ms;
 }
 
 
 .explain p:first-child {
-/* 
+
     transition-delay: 150ms;
-    translate: -100%; */
+    translate: -100%;
 }
 
 
 .explain.show p {
 
-    /* translate: 0;
-    opacity: 1; */
+    translate: 0;
+    opacity: 1;
 }
 
 

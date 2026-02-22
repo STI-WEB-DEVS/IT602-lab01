@@ -146,7 +146,18 @@
     align-items: center;
     height: 500px;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 25px;
+    opacity: 0;
+    transform: scale(0); 
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
+
+
+.image-Division.show {
+
+    opacity: 1;
+    transform: scale(1);
+}
+
 
 
 .image-Division img {

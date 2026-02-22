@@ -36,3 +36,9 @@ const Desc = document.querySelectorAll('.explain')
 Desc.forEach((el) => {
     observer.observe(el)
 })
+
+
+
+const HeroProfile = document.getElementById('Image-hero')
+
+observer.observe(HeroProfile);

@@ -15,7 +15,7 @@
     <nav class="header">
 
         <div class="navbar">
-            <a href="">Home</a>
+            <a href="#home">Home</a>
             <a href="#About">About</a>
             <a href="#Contact-Container">Contact</a>
             <a href="">Service</a>
@@ -25,7 +25,7 @@
 
     <!-- Home -->
 
-    <section style="height: 100vh;">
+    <section style="height: 100vh;" id="home">
         
         <div class="Hero-Container">
 
@@ -51,8 +51,8 @@
            </div>
 
            <div class="Feature animate__animated animate__fadeInRight">
-                <div class="image-Division">
-                    <img src="resource/transparent.webp" alt="image">
+                <div class="image-Division" id="Image-hero">
+                    <img src="resource/prof.jpg" alt="image">
                 </div>
             </div>
 
@@ -71,7 +71,7 @@
                 <div class="Hero-Profile">
 
                     <div class="profile-border">
-                        <img src="resource/transparent.webp" alt="" srcset="">
+                        <img src="resource/prof.jpg" alt="" srcset="">
                     </div>
                     <div class="hero-name">
                         <h2>Ram Llanes</h2>
@@ -262,22 +262,21 @@
 
                         <div class="input-fields">
                             <h1>Get in Touch <br>
-                            <!-- <span class="text-sm">You can reach us anytime</span></h1> -->
                         </div>
                         
                         <div class="Name">
                             <div class="simp">
-                                <input type="text" placeholder="Firstname" name="name">
-                                <input type="text" placeholder="Lastname" name="name">
+                                <input type="text" placeholder="Firstname" name="name" autocomplete="on">
+                                <input type="text" placeholder="Lastname" name="name"  autocomplete="on">
                             </div>
                             <div class="Email">
-                                <input type="email" placeholder="Email" name="email">
+                                <input type="email" placeholder="Email" name="email"  autocomplete="on">
                             </div>
                             <div class="Numbers">
-                                <select name="" id="">
+                                <select name="number" id="">
                                     <Option>+63</Option>
                                 </select>
-                                <input type="text" placeholder="Phone number" name="number">
+                                <input type="text" placeholder="Phone number" name="number"  autocomplete="on">
                             </div>
                         </div>
 
