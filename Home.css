@@ -224,3 +224,71 @@
         height: auto;
     }
 }
+
+
+@media (max-width:480px) {
+
+        .Hero-Container {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .Content-Description {
+        width: 100%;
+        align-items: center;
+    }
+
+    .fName {
+        height: auto;
+        justify-content: center;
+        padding: 20px 0;
+    }
+
+    .FullName {
+        font-size: 32px;
+        padding-right: 0;
+    }
+
+    .highlight {
+        font-size: 20px;
+    }
+
+    .description {
+        height: auto;
+        padding: 20px 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .description p {
+        font-size: 18px;
+        text-align: justify;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .Hire-ME,
+    .Lets-talk {
+        width: 200px;
+        margin: 0;
+    }
+
+    .Feature {
+        margin-top: 40px;
+    }
+
+    .image-Division {
+        width: 100%;
+        height: auto;
+        max-width: 350px;
+    }
+
+    .image-Division img {
+        height: auto;
+    }
+}

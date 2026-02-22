@@ -5,7 +5,7 @@
     height: 100vh;
     display: flex;
     flex-direction: row;
-    padding-top: 30px;
+    padding-top: 6px;
 }
 
 
@@ -85,6 +85,7 @@
     display: flex;
     align-items: center;
     padding: 5px 15px;
+    justify-content: center;
 }
 
 .label {
@@ -306,6 +307,7 @@
     opacity: 0;
     transform: translateX(100px); /* move left */
     transition: opacity 0.6s ease, transform 0.6s ease;
+    
 }
 
 
@@ -470,17 +472,119 @@
 
     .Services {
         flex-direction: column;
-        gap: 20px;
     }
 
     .Sample {
-        width: 90%;
+        width: 100%;
         max-width: none;
+        align-items: center;
+        flex-direction: row;
+        row-gap: 10px;
     }
 
     .programming-icon {
         flex-wrap: wrap;
         gap: 20px;
+    }
+
+
+    .Sample p {
+
+        margin-left: 10px;
+        font-size: 8px;
+    }
+
+
+    .Sample h1 {
+
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .Lending-system {
+
+        width: 50%;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .about {
+        padding-top: 200px;
+        flex-direction: column;
+        height: auto;
+    }
+
+
+    .hero-information {
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+    }
+
+
+    .hero-Featured {
+        width: 100%;
+        height: auto;
+        padding: 20px 0;
+    }
+
+  
+    .Featured-Content {
+        grid-template-columns: 1fr;
+        height: auto;
+        text-align: center;
+        background-position: center;
+    }
+
+    .featured-headline {
+        padding-left: 0;
+        align-items: center;
+    }
+
+
+    .hero-image {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    .hero-image img {
+        object-fit: cover;
+    }
+
+
+    .hero-stats ul {
+        padding: 0;
+        text-align: center;
+    }
+
+    .hero-stats li {
+        display: block;
+        margin: 10px 0;
+    }
+
+
+    .Services {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .Sample {
+         max-width: 100%;
+    }
+
+    .programming-icon {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+
+    
+    .lending-system p {
+        font-size: 14px;
+        text-align: center;
     }
 
 }

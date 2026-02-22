@@ -3,23 +3,18 @@
 
 .Contact-Me {
 
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     flex-direction: row;
-    padding-top: 30px;
+    padding: 40px 1%;
 }
 
 
 .Text-Content {
 
-    display: flex;
-    justify-content: center;
-    align-items: start;
     flex: 1;
-    flex-direction: column;
-    padding-left: 40px;
-    padding-bottom: 5px
+    padding-top: 8rem;
 }
 
 
@@ -205,17 +200,17 @@ form {
     display: grid;
     grid-template-rows: 150px 222px 1fr;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 25px;
-    opacity: 0;
+    /* opacity: 0;
     transform: translateX(100px); 
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition: opacity 0.6s ease, transform 0.6s ease; */
 }
 
 
-.form.show {
+/* .form.show {
 
     transform: translateX(0);
     opacity: 1;
-}
+} */
 
 
 .input-fields {
@@ -389,7 +384,7 @@ tbody {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
 
     .Table-Container {
         width: 100%;
@@ -427,5 +422,114 @@ tbody {
         display: inline-block;
         width: 120px;
         color: #081B29;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .Contact-Me {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+
+    .rules,
+    .info-email,
+    .number,
+    .Support {
+
+        
+        justify-content: center;
+    }
+
+
+    .Header-Customer,
+    .explain p {
+
+        justify-content: center;
+    }
+
+
+    .Header-Content,
+    .Hero-text {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .Header-Content h1 {
+        font-size: 3rem;
+    }
+
+    .Text-Content {
+        padding-left: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .define {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .Form {
+        width: 100%;
+        padding-top: 30px;
+        justify-content: center;
+    }
+
+    .Form-Cotainer {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        padding: 20px;
+    }
+
+    form {
+        grid-template-rows: auto auto auto;
+    }
+
+    .Name input {
+        width: 100%;
+    }
+
+
+    .Email input {
+
+        width: 325px;
+    }
+
+
+    .Numbers select {
+
+        height: 39px;
+    }
+
+
+    .Numbers input{
+
+        width: 270px;
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+
+    .mess textarea {
+
+        width: 320px;
+    }
+
+
+    .button-container button {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+
+    .input-fields {
+
+        margin-bottom: 50px;
     }
 }
